@@ -109,7 +109,7 @@
 12[UIDebuggingInformationOverlay prepareDebuggi">
 <meta property="og:image" content="http://honeyeeb.com/debugger_weibo.jpg">
 <meta property="og:image" content="http://honeyeeb.com/uidebugginginformationoverlay_0.png">
-<meta property="og:updated_time" content="2017-05-27T05:33:37.000Z">
+<meta property="og:updated_time" content="2017-05-27T07:38:46.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="调试别人的APP">
 <meta name="twitter:description" content="1. 新发现私有API今天上午iOS技术圈有一些骚动，原因就是图图发布了一条微博:
@@ -405,6 +405,7 @@
 <p>因为是私有API，这段代码是不能直接使用的，也不能提交到App Store上，所以我认为你可以在公司提交版本内测或者开发过程中加入，这样发现bug的时候iOS工程师就顺利的发现问题。</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> overlayClass = <span class="type">NSClassFromString</span>(<span class="string">"UIDebuggingInformationOverlay"</span>) <span class="keyword">as</span>? <span class="type">UIWindow</span>.<span class="type">Type</span></div><div class="line"><span class="number">_</span> = overlayClass?.perform(<span class="type">NSSelectorFromString</span>(<span class="string">"prepareDebuggingOverlay"</span>))</div><div class="line"><span class="keyword">let</span> overlay = overlayClass?.perform(<span class="type">NSSelectorFromString</span>(<span class="string">"overlay"</span>)).takeUnretainedValue() <span class="keyword">as</span>? <span class="type">UIWindow</span></div><div class="line"><span class="number">_</span> = overlay?.perform(<span class="type">NSSelectorFromString</span>(<span class="string">"toggleVisibility"</span>))</div></pre></td></tr></table></figure>
 <p>私认为在实际开发中Xcode内置更加友好且功能完善的UI查看工具，界面和<code>Reveal</code>也很相似，新发现的私有API可能用处不是特别大。</p>
+<!--更新：只需要调用[UIDebuggingInformationOverlay prepareDebuggingOverlay]私有API即可，想要调起调试页面只需要两个手机点击StatusBar即可-->
 <h2 id="2-更好用的FLEX"><a href="#2-更好用的FLEX" class="headerlink" title="2. 更好用的FLEX"></a>2. 更好用的FLEX</h2><p>在发现这个私有API之前，已经有几个调试UI的轮子，个人比较喜欢的一个是<code>Reveal</code>功能强大加界面友好到没啥说的，只是商业产品，这里推荐另一款由<code>Flipboard</code>团队开源的<code>FLEX</code>。<a href="https://github.com/Flipboard/FLEX" target="_blank" rel="external">详情还是戳此!</a>，功能列举了一大堆，除了能查看UI信息还能抓取网络接口信息，访问APP内部资源，模拟3DTouch等。</p>
 <h2 id="3-神器IPAPatch"><a href="#3-神器IPAPatch" class="headerlink" title="3. 神器IPAPatch"></a>3. 神器IPAPatch</h2><p><code>IPAPatch</code>借助苹果私有API或者<code>FLEX</code>可以说能够做的事情就是太多了。<br><code>IPAPatch</code>的这里原理就不讲了，具体的已经开源了，<a href="https://github.com/Naituw/IPAPatch" target="_blank" rel="external">详情使劲戳此!</a></p>
 <p>你需要做的：</p>
