@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="iOS,iOSRE," />
+  <meta name="keywords" content="iOS," />
 
 
 
@@ -93,31 +93,22 @@
 
 
 
-<meta name="description" content="1. 新发现私有API今天上午iOS技术圈有一些骚动，原因就是图图发布了一条微博:
-
-内容是国外友人在浏览iOS 私有库的时候发现苹果大大隐藏了一个功能，这个功能提供苹果的工程师调试APP，在APP内可以查看APP的UI等信息。戳次查看文章内容!
-主要调用UIKit.framework的两个私有API:
-12345678Class overClass = NSClassFromString(@&quot;U">
+<meta name="description" content="平时工作肯定会遇到delegate的使用，比较常用的UITableViewDelegate、UITableViewDataSource， 有关delegate的特点以及使用可以参考苹果官方文档。
+delegate &amp;amp; struct最近在阅读SRSocketRocket源代码时候发现了一个之前没接触过的方式，代码中为protocol包装了一层，使用struct构建一个对象来标识实现这个协议的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="调试别人的APP">
-<meta property="og:url" content="http://honeyeeb.com/2017/05/27/调试别人的APP/index.html">
+<meta property="og:title" content="delegate使用新想法">
+<meta property="og:url" content="http://honeyeeb.com/2017/06/13/delegate使用新想法/index.html">
 <meta property="og:site_name" content="honeyeeb's blog">
-<meta property="og:description" content="1. 新发现私有API今天上午iOS技术圈有一些骚动，原因就是图图发布了一条微博:
-
-内容是国外友人在浏览iOS 私有库的时候发现苹果大大隐藏了一个功能，这个功能提供苹果的工程师调试APP，在APP内可以查看APP的UI等信息。戳次查看文章内容!
-主要调用UIKit.framework的两个私有API:
-12345678Class overClass = NSClassFromString(@&quot;U">
-<meta property="og:image" content="http://honeyeeb.com/debugger_weibo.jpg">
-<meta property="og:image" content="http://honeyeeb.com/uidebugginginformationoverlay_0.png">
-<meta property="og:updated_time" content="2017-06-08T03:08:51.000Z">
+<meta property="og:description" content="平时工作肯定会遇到delegate的使用，比较常用的UITableViewDelegate、UITableViewDataSource， 有关delegate的特点以及使用可以参考苹果官方文档。
+delegate &amp;amp; struct最近在阅读SRSocketRocket源代码时候发现了一个之前没接触过的方式，代码中为protocol包装了一层，使用struct构建一个对象来标识实现这个协议的">
+<meta property="og:image" content="http://honeyeeb.com/delegate_wrapper_0.png">
+<meta property="og:image" content="http://honeyeeb.com/delegate_wrapper_1.png">
+<meta property="og:updated_time" content="2017-06-13T09:41:40.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="调试别人的APP">
-<meta name="twitter:description" content="1. 新发现私有API今天上午iOS技术圈有一些骚动，原因就是图图发布了一条微博:
-
-内容是国外友人在浏览iOS 私有库的时候发现苹果大大隐藏了一个功能，这个功能提供苹果的工程师调试APP，在APP内可以查看APP的UI等信息。戳次查看文章内容!
-主要调用UIKit.framework的两个私有API:
-12345678Class overClass = NSClassFromString(@&quot;U">
-<meta name="twitter:image" content="http://honeyeeb.com/debugger_weibo.jpg">
+<meta name="twitter:title" content="delegate使用新想法">
+<meta name="twitter:description" content="平时工作肯定会遇到delegate的使用，比较常用的UITableViewDelegate、UITableViewDataSource， 有关delegate的特点以及使用可以参考苹果官方文档。
+delegate &amp;amp; struct最近在阅读SRSocketRocket源代码时候发现了一个之前没接触过的方式，代码中为protocol包装了一层，使用struct构建一个对象来标识实现这个协议的">
+<meta name="twitter:image" content="http://honeyeeb.com/delegate_wrapper_0.png">
 
 
 
@@ -145,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="http://honeyeeb.com/2017/05/27/调试别人的APP/"/>
+  <link rel="canonical" href="http://honeyeeb.com/2017/06/13/delegate使用新想法/"/>
 
 
 
 
 
-  <title>调试别人的APP | honeyeeb's blog</title>
+  <title>delegate使用新想法 | honeyeeb's blog</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -309,7 +300,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://honeyeeb.com/2017/05/27/调试别人的APP/">
+    <link itemprop="mainEntityOfPage" href="http://honeyeeb.com/2017/06/13/delegate使用新想法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="honeyeeb">
@@ -326,7 +317,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">调试别人的APP</h1>
+          <h1 class="post-title" itemprop="name headline">delegate使用新想法</h1>
         
 
         <div class="post-meta">
@@ -338,8 +329,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-27T12:57:36+08:00">
-                2017-05-27
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-13T16:51:55+08:00">
+                2017-06-13
               </time>
             
 
@@ -357,9 +348,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/05/27/调试别人的APP/#comments" itemprop="discussionUrl">
+                <a href="/2017/06/13/delegate使用新想法/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/05/27/调试别人的APP/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/06/13/delegate使用新想法/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -367,7 +358,7 @@
 
           
           
-             <span id="/2017/05/27/调试别人的APP/" class="leancloud_visitors" data-flag-title="调试别人的APP">
+             <span id="/2017/06/13/delegate使用新想法/" class="leancloud_visitors" data-flag-title="delegate使用新想法">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -395,23 +386,24 @@
       
 
       
-        <h2 id="1-新发现私有API"><a href="#1-新发现私有API" class="headerlink" title="1. 新发现私有API"></a>1. 新发现私有API</h2><p>今天上午iOS技术圈有一些骚动，原因就是<code>图图</code>发布了一条微博:</p>
-<p><img src="debugger_weibo.jpg" alt="图图的微博"></p>
-<p>内容是国外友人在浏览iOS 私有库的时候发现苹果大大隐藏了一个功能，这个功能提供苹果的工程师调试APP，在APP内可以查看APP的UI等信息。<a href="http://ryanipete.com/blog/ios/swift/objective-c/uidebugginginformationoverlay/" target="_blank" rel="external">戳次查看文章内容!</a></p>
-<p>主要调用<code>UIKit.framework</code>的两个私有API:</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">Class overClass = <span class="built_in">NSClassFromString</span>(<span class="string">@"UIDebuggingInformationOverlay"</span>);</div><div class="line">    SEL overSel = <span class="built_in">NSSelectorFromString</span>(<span class="string">@"prepareDebuggingOverlay"</span>);</div><div class="line">    <span class="keyword">if</span> (overClass &amp;&amp; overSel) &#123;</div><div class="line"><span class="meta">#pragma clang diagnostic push</span></div><div class="line"><span class="meta">#pragma clang diagnostic ignored <span class="meta-string">"-Warc-performSelector-leaks"</span></span></div><div class="line">        [overClass performSelector:overSel];</div><div class="line"><span class="meta">#pragma clang diagnostic pop</span></div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-<p>启动APP后主要界面张这个样子:</p>
-<p><img src="uidebugginginformationoverlay_0.png" alt="启动后界面"></p>
-<p>因为是私有API，这段代码是不能直接使用的，也不能提交到App Store上，所以我认为你可以在公司提交版本内测或者开发过程中加入，这样发现bug的时候iOS工程师就顺利的发现问题。</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> overlayClass = <span class="type">NSClassFromString</span>(<span class="string">"UIDebuggingInformationOverlay"</span>) <span class="keyword">as</span>? <span class="type">UIWindow</span>.<span class="type">Type</span></div><div class="line"><span class="number">_</span> = overlayClass?.perform(<span class="type">NSSelectorFromString</span>(<span class="string">"prepareDebuggingOverlay"</span>))</div><div class="line"><span class="keyword">let</span> overlay = overlayClass?.perform(<span class="type">NSSelectorFromString</span>(<span class="string">"overlay"</span>)).takeUnretainedValue() <span class="keyword">as</span>? <span class="type">UIWindow</span></div><div class="line"><span class="number">_</span> = overlay?.perform(<span class="type">NSSelectorFromString</span>(<span class="string">"toggleVisibility"</span>))</div></pre></td></tr></table></figure>
-<p>私认为在实际开发中Xcode内置更加友好且功能完善的UI查看工具，界面和<code>Reveal</code>也很相似，新发现的私有API可能用处不是特别大。</p>
-<!--更新：只需要调用[UIDebuggingInformationOverlay prepareDebuggingOverlay]私有API即可，想要调起调试页面只需要两个手机点击StatusBar即可-->
-<h2 id="2-更好用的FLEX"><a href="#2-更好用的FLEX" class="headerlink" title="2. 更好用的FLEX"></a>2. 更好用的FLEX</h2><p>在发现这个私有API之前，已经有几个调试UI的轮子，个人比较喜欢的一个是<code>Reveal</code>功能强大加界面友好到没啥说的，只是商业产品，这里推荐另一款由<code>Flipboard</code>团队开源的<code>FLEX</code>。<a href="https://github.com/Flipboard/FLEX" target="_blank" rel="external">详情还是戳此!</a>，功能列举了一大堆，除了能查看UI信息还能抓取网络接口信息，访问APP内部资源，模拟3DTouch等。</p>
-<h2 id="3-神器IPAPatch"><a href="#3-神器IPAPatch" class="headerlink" title="3. 神器IPAPatch"></a>3. 神器IPAPatch</h2><p><code>IPAPatch</code>借助苹果私有API或者<code>FLEX</code>可以说能够做的事情就是太多了。<br><code>IPAPatch</code>的这里原理就不讲了，具体的已经开源了，<a href="https://github.com/Naituw/IPAPatch" target="_blank" rel="external">详情使劲戳此!</a></p>
-<p>你需要做的：</p>
-<p>1、一个脱壳的APP(想要调试的APP)<br>2、私有API或者FLEX的framework</p>
-<p>将<code>IPAPatch</code>clone到电脑，将APP重命名为<code>app.ipa</code>放入到<code>IPAPatch</code>的<code>Assets</code>目录下，将私有API的代码写入<code>IPAPatchEntry.m</code>文件或者将<code>FLEX.framework</code>导入到<code>IPAPatch</code>的<code>Assets/Frameworks</code>目录下，在<code>IPAPatchEntry.m</code>文件中加入<code>[[FLEXManager sharedManager] showExplorer];</code></p>
-<p>然后 <code>cmd + R</code> 就等待神奇的结果吧。</p>
+        <p>平时工作肯定会遇到<code>delegate</code>的使用，比较常用的<code>UITableViewDelegate</code>、<code>UITableViewDataSource</code>， 有关<code>delegate</code>的特点以及使用可以参考<a href="https://developer.apple.com/library/content/documentation/General/Conceptual/DevPedia-CocoaCore/Delegation.html" target="_blank" rel="external">苹果官方文档</a>。</p>
+<h2 id="delegate-amp-struct"><a href="#delegate-amp-struct" class="headerlink" title="delegate &amp; struct"></a>delegate &amp; struct</h2><p>最近在阅读<a href="https://github.com/facebook/SocketRocket" target="_blank" rel="external">SRSocketRocket</a>源代码时候发现了一个之前没接触过的方式，代码中为<code>protocol</code>包装了一层，使用<code>struct</code>构建一个对象来标识实现这个协议的对象都实现了哪些方法：</p>
+<p> <img src="delegate_wrapper_0.png" alt="delegateWrapper"><br> <img src="delegate_wrapper_1.png" alt="delegateWrapper"></p>
+<p>我为此写了一个<a href="https://github.com/honeyeeb/delegateWrapper" target="_blank" rel="external">Demo</a>，简单的介绍了这种新的方式。</p>
+<h2 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h2><p>Demo比较简单，三个页面用来区分平时使用方法和这次新的使用方法。</p>
+<p>首先定义了一个协议<code>HBDemoProtocol</code>，包含两个接口给要实现者去实现。</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)sayHello;</div><div class="line">- (<span class="keyword">void</span>)sayBye;</div></pre></td></tr></table></figure>
+<p><code>ViewController</code>是APP启动看见的页面，<br><code>一般实现</code>按钮将页面带入平时使用方式调用页面；<br><code>包装实现</code>按钮将页面带入这次新方法调用页面。</p>
+<h3 id="Origin"><a href="#Origin" class="headerlink" title="Origin"></a>Origin</h3><p>定义<code>HBOriginModel</code>对象用来调用<code>HBDemoProtocol</code>的实现。<br><code>HBOriginViewController</code> VC是平时使用方式，实现<code>HBDemoProtocol</code>。主要代码:</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">IBAction</span>)sayHelloAction:(<span class="keyword">id</span>)sender &#123;</div><div class="line">    [<span class="keyword">self</span>.originModel sayHelloAction];</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">IBAction</span>)sayByeAction:(<span class="keyword">id</span>)sender &#123;</div><div class="line">    [<span class="keyword">self</span>. originModel sayByeAction];</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)alertTitle:(<span class="built_in">NSString</span> *)title &#123;</div><div class="line">    <span class="built_in">UIAlertController</span> *alert = [<span class="built_in">UIAlertController</span> alertControllerWithTitle:title message:<span class="literal">nil</span> preferredStyle:<span class="built_in">UIAlertControllerStyleAlert</span>];</div><div class="line">    [alert addAction:[<span class="built_in">UIAlertAction</span> actionWithTitle:<span class="string">@"确定"</span> style:<span class="built_in">UIAlertActionStyleDefault</span> handler:<span class="literal">nil</span>]];</div><div class="line">    [<span class="keyword">self</span> presentViewController:alert animated:<span class="literal">YES</span> completion:<span class="literal">nil</span>];</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)sayHello &#123;</div><div class="line">    [<span class="keyword">self</span> alertTitle:<span class="string">@"sayHello"</span>];</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)sayBye &#123;</div><div class="line">    [<span class="keyword">self</span> alertTitle:<span class="string">@"sayBye"</span>];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>点击<code>sayHello</code>、<code>sayBye</code>按钮弹出不同的文言。</p>
+<h3 id="新的思路"><a href="#新的思路" class="headerlink" title="新的思路"></a>新的思路</h3><p>对协议<code>HBDemoProtocol</code>做一个封装对象<code>HBProtocolWrapper</code>，定义结构体标识协议对应的方法:</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">struct</span> HBDemoProtocolAvalibale &#123;</div><div class="line">    <span class="built_in">BOOL</span> sayHello   : <span class="number">1</span>;</div><div class="line">    <span class="built_in">BOOL</span> sayBye     : <span class="number">1</span>;</div><div class="line">    </div><div class="line">&#125;;</div><div class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> HBDemoProtocolAvalibale HBDemoProtocolAvalibale;</div><div class="line"><span class="keyword">typedef</span> <span class="keyword">void</span>(^HBDemoProtocolBlock)(<span class="keyword">id</span>&lt;HBDemoProtocol&gt; delegate, HBDemoProtocolAvalibale delegateAvalible);</div><div class="line"></div><div class="line">....</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)setDelegate:(<span class="keyword">id</span>&lt;HBDemoProtocol&gt;)delegate &#123;</div><div class="line">    dispatch_barrier_async(<span class="keyword">self</span>.accessQueue, ^&#123;</div><div class="line">        _delegate = delegate;</div><div class="line">        </div><div class="line">        <span class="keyword">self</span>.delegateAvalible = (HBDemoProtocolAvalibale)&#123;</div><div class="line">            .sayHello = [delegate respondsToSelector:<span class="keyword">@selector</span>(sayHello)],</div><div class="line">            .sayBye = [delegate respondsToSelector:<span class="keyword">@selector</span>(sayBye)],</div><div class="line">            </div><div class="line">        &#125;;</div><div class="line">    &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这样在调用协议实现时可以这样写:</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)setDelegate:(<span class="keyword">id</span>&lt;HBDemoProtocol&gt;)delegate &#123;</div><div class="line">    <span class="keyword">self</span>.protocolWrapper.delegate = delegate;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)sayHelloAction &#123;</div><div class="line">    [<span class="keyword">self</span>.protocolWrapper performDelegateBlock:^(<span class="keyword">id</span>&lt;HBDemoProtocol&gt; delegate, HBDemoProtocolAvalibale delegateAvalible) &#123;</div><div class="line">        <span class="keyword">if</span> (delegateAvalible.sayHello) &#123;</div><div class="line">            [delegate sayHello];</div><div class="line">        &#125;</div><div class="line">    &#125;];</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)sayByeAction &#123;</div><div class="line">    [<span class="keyword">self</span>.protocolWrapper performDelegateBlock:^(<span class="keyword">id</span>&lt;HBDemoProtocol&gt; delegate, HBDemoProtocolAvalibale delegateAvalible) &#123;</div><div class="line">        <span class="keyword">if</span> (delegateAvalible.sayBye) &#123;</div><div class="line">            [delegate sayBye];</div><div class="line">        &#125;</div><div class="line">    &#125;];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><code>HBWrapperViewController</code> 页面与 <code>HBOriginViewController</code>实现上基本一致。<br>将对<code>delegate</code>操作的代码和附加功能(delegate操作的队列等)做拆分，这样拆分了代码，阅读以及测试起来更加方便。</p>
+<p>这是一些阅读源代码的发现，如果你有其它意见或者见解欢迎留言(注意：留言系统是Disqus)或者发我邮箱：<code>honeyeeeb@gmail.com</code>。谢谢！</p>
+<p>需要多读一读优秀源代码，O(∩_∩)O~~</p>
 
       
     </div>
@@ -440,7 +432,7 @@
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="http://honeyeeb.com/2017/05/27/调试别人的APP/" title="调试别人的APP">http://honeyeeb.com/2017/05/27/调试别人的APP/</a>
+      <a href="http://honeyeeb.com/2017/06/13/delegate使用新想法/" title="delegate使用新想法">http://honeyeeb.com/2017/06/13/delegate使用新想法/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明： </strong>
@@ -458,8 +450,6 @@
           
             <a href="/tags/iOS/" rel="tag"># iOS</a>
           
-            <a href="/tags/iOSRE/" rel="tag"># iOSRE</a>
-          
         </div>
       
 
@@ -471,8 +461,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/17/Xcode马虎导致的坑/" rel="next" title="Xcode马虎导致的坑">
-                <i class="fa fa-chevron-left"></i> Xcode马虎导致的坑
+              <a href="/2017/05/27/调试别人的APP/" rel="next" title="调试别人的APP">
+                <i class="fa fa-chevron-left"></i> 调试别人的APP
               </a>
             
           </div>
@@ -480,10 +470,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/06/13/delegate使用新想法/" rel="prev" title="delegate使用新想法">
-                delegate使用新想法 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -653,7 +639,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-新发现私有API"><span class="nav-number">1.</span> <span class="nav-text">1. 新发现私有API</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-更好用的FLEX"><span class="nav-number">2.</span> <span class="nav-text">2. 更好用的FLEX</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-神器IPAPatch"><span class="nav-number">3.</span> <span class="nav-text">3. 神器IPAPatch</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#delegate-amp-struct"><span class="nav-number">1.</span> <span class="nav-text">delegate & struct</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Demo"><span class="nav-number">2.</span> <span class="nav-text">Demo</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Origin"><span class="nav-number">2.1.</span> <span class="nav-text">Origin</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新的思路"><span class="nav-number">2.2.</span> <span class="nav-text">新的思路</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -816,9 +802,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://honeyeeb.com/2017/05/27/调试别人的APP/';
-          this.page.identifier = '2017/05/27/调试别人的APP/';
-          this.page.title = '调试别人的APP';
+          this.page.url = 'http://honeyeeb.com/2017/06/13/delegate使用新想法/';
+          this.page.identifier = '2017/06/13/delegate使用新想法/';
+          this.page.title = 'delegate使用新想法';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://honeyeeb.disqus.com/embed.js';
