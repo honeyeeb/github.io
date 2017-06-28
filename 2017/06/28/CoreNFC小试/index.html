@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="iOS,iOSRE," />
+  <meta name="keywords" content="iOS,CoreNFC," />
 
 
 
@@ -93,31 +93,28 @@
 
 
 
-<meta name="description" content="1. 新发现私有API今天上午iOS技术圈有一些骚动，原因就是图图发布了一条微博:
-
-内容是国外友人在浏览iOS 私有库的时候发现苹果大大隐藏了一个功能，这个功能提供苹果的工程师调试APP，在APP内可以查看APP的UI等信息。戳次查看文章内容!
-主要调用UIKit.framework的两个私有API:
-12345678Class overClass = NSClassFromString(@&quot;U">
+<meta name="description" content="最近北京地铁在房山线试运行手机刷卡，实际上就是手机支持NFC功能的方便了，鉴于市场上主流的手机都支持全功能NFC，以后出门忘记带乘车卡也可以坐地铁了，不过iPhone用户此时比较心塞，由于iPhone安全策略一直没有开放NFC功能提供开发者使用。BUT，WWDC17带来了众多功能中的NFC功能，本文在iOS11 beta版本上做一个小小的测试，看看功能如何。
+要求
+iOS11
+iPhone7 or">
 <meta property="og:type" content="article">
-<meta property="og:title" content="调试别人的APP">
-<meta property="og:url" content="http://honeyeeb.com/2017/05/27/调试别人的APP/index.html">
+<meta property="og:title" content="CoreNFC小试">
+<meta property="og:url" content="http://honeyeeb.com/2017/06/28/CoreNFC小试/index.html">
 <meta property="og:site_name" content="honeyeeb's blog">
-<meta property="og:description" content="1. 新发现私有API今天上午iOS技术圈有一些骚动，原因就是图图发布了一条微博:
-
-内容是国外友人在浏览iOS 私有库的时候发现苹果大大隐藏了一个功能，这个功能提供苹果的工程师调试APP，在APP内可以查看APP的UI等信息。戳次查看文章内容!
-主要调用UIKit.framework的两个私有API:
-12345678Class overClass = NSClassFromString(@&quot;U">
-<meta property="og:image" content="http://honeyeeb.com/debugger_weibo.jpg">
-<meta property="og:image" content="http://honeyeeb.com/uidebugginginformationoverlay_0.png">
-<meta property="og:updated_time" content="2017-06-08T03:08:51.000Z">
+<meta property="og:description" content="最近北京地铁在房山线试运行手机刷卡，实际上就是手机支持NFC功能的方便了，鉴于市场上主流的手机都支持全功能NFC，以后出门忘记带乘车卡也可以坐地铁了，不过iPhone用户此时比较心塞，由于iPhone安全策略一直没有开放NFC功能提供开发者使用。BUT，WWDC17带来了众多功能中的NFC功能，本文在iOS11 beta版本上做一个小小的测试，看看功能如何。
+要求
+iOS11
+iPhone7 or">
+<meta property="og:image" content="http://honeyeeb.com/scan_nfc.jpeg">
+<meta property="og:image" content="http://honeyeeb.com/new_issues.png">
+<meta property="og:updated_time" content="2017-06-28T10:31:02.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="调试别人的APP">
-<meta name="twitter:description" content="1. 新发现私有API今天上午iOS技术圈有一些骚动，原因就是图图发布了一条微博:
-
-内容是国外友人在浏览iOS 私有库的时候发现苹果大大隐藏了一个功能，这个功能提供苹果的工程师调试APP，在APP内可以查看APP的UI等信息。戳次查看文章内容!
-主要调用UIKit.framework的两个私有API:
-12345678Class overClass = NSClassFromString(@&quot;U">
-<meta name="twitter:image" content="http://honeyeeb.com/debugger_weibo.jpg">
+<meta name="twitter:title" content="CoreNFC小试">
+<meta name="twitter:description" content="最近北京地铁在房山线试运行手机刷卡，实际上就是手机支持NFC功能的方便了，鉴于市场上主流的手机都支持全功能NFC，以后出门忘记带乘车卡也可以坐地铁了，不过iPhone用户此时比较心塞，由于iPhone安全策略一直没有开放NFC功能提供开发者使用。BUT，WWDC17带来了众多功能中的NFC功能，本文在iOS11 beta版本上做一个小小的测试，看看功能如何。
+要求
+iOS11
+iPhone7 or">
+<meta name="twitter:image" content="http://honeyeeb.com/scan_nfc.jpeg">
 
 
 
@@ -145,13 +142,13 @@
 
 
 
-  <link rel="canonical" href="http://honeyeeb.com/2017/05/27/调试别人的APP/"/>
+  <link rel="canonical" href="http://honeyeeb.com/2017/06/28/CoreNFC小试/"/>
 
 
 
 
 
-  <title>调试别人的APP | honeyeeb's blog</title>
+  <title>CoreNFC小试 | honeyeeb's blog</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -309,7 +306,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://honeyeeb.com/2017/05/27/调试别人的APP/">
+    <link itemprop="mainEntityOfPage" href="http://honeyeeb.com/2017/06/28/CoreNFC小试/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="honeyeeb">
@@ -326,7 +323,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">调试别人的APP</h1>
+          <h1 class="post-title" itemprop="name headline">CoreNFC小试</h1>
         
 
         <div class="post-meta">
@@ -338,8 +335,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-27T12:57:36+08:00">
-                2017-05-27
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-28T17:05:20+08:00">
+                2017-06-28
               </time>
             
 
@@ -357,9 +354,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/05/27/调试别人的APP/#comments" itemprop="discussionUrl">
+                <a href="/2017/06/28/CoreNFC小试/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/05/27/调试别人的APP/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/06/28/CoreNFC小试/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -367,7 +364,7 @@
 
           
           
-             <span id="/2017/05/27/调试别人的APP/" class="leancloud_visitors" data-flag-title="调试别人的APP">
+             <span id="/2017/06/28/CoreNFC小试/" class="leancloud_visitors" data-flag-title="CoreNFC小试">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -395,23 +392,40 @@
       
 
       
-        <h2 id="1-新发现私有API"><a href="#1-新发现私有API" class="headerlink" title="1. 新发现私有API"></a>1. 新发现私有API</h2><p>今天上午iOS技术圈有一些骚动，原因就是<code>图图</code>发布了一条微博:</p>
-<p><img src="debugger_weibo.jpg" alt="图图的微博"></p>
-<p>内容是国外友人在浏览iOS 私有库的时候发现苹果大大隐藏了一个功能，这个功能提供苹果的工程师调试APP，在APP内可以查看APP的UI等信息。<a href="http://ryanipete.com/blog/ios/swift/objective-c/uidebugginginformationoverlay/" target="_blank" rel="external">戳次查看文章内容!</a></p>
-<p>主要调用<code>UIKit.framework</code>的两个私有API:</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">Class overClass = <span class="built_in">NSClassFromString</span>(<span class="string">@"UIDebuggingInformationOverlay"</span>);</div><div class="line">    SEL overSel = <span class="built_in">NSSelectorFromString</span>(<span class="string">@"prepareDebuggingOverlay"</span>);</div><div class="line">    <span class="keyword">if</span> (overClass &amp;&amp; overSel) &#123;</div><div class="line"><span class="meta">#pragma clang diagnostic push</span></div><div class="line"><span class="meta">#pragma clang diagnostic ignored <span class="meta-string">"-Warc-performSelector-leaks"</span></span></div><div class="line">        [overClass performSelector:overSel];</div><div class="line"><span class="meta">#pragma clang diagnostic pop</span></div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-<p>启动APP后主要界面张这个样子:</p>
-<p><img src="uidebugginginformationoverlay_0.png" alt="启动后界面"></p>
-<p>因为是私有API，这段代码是不能直接使用的，也不能提交到App Store上，所以我认为你可以在公司提交版本内测或者开发过程中加入，这样发现bug的时候iOS工程师就顺利的发现问题。</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> overlayClass = <span class="type">NSClassFromString</span>(<span class="string">"UIDebuggingInformationOverlay"</span>) <span class="keyword">as</span>? <span class="type">UIWindow</span>.<span class="type">Type</span></div><div class="line"><span class="number">_</span> = overlayClass?.perform(<span class="type">NSSelectorFromString</span>(<span class="string">"prepareDebuggingOverlay"</span>))</div><div class="line"><span class="keyword">let</span> overlay = overlayClass?.perform(<span class="type">NSSelectorFromString</span>(<span class="string">"overlay"</span>)).takeUnretainedValue() <span class="keyword">as</span>? <span class="type">UIWindow</span></div><div class="line"><span class="number">_</span> = overlay?.perform(<span class="type">NSSelectorFromString</span>(<span class="string">"toggleVisibility"</span>))</div></pre></td></tr></table></figure>
-<p>私认为在实际开发中Xcode内置更加友好且功能完善的UI查看工具，界面和<code>Reveal</code>也很相似，新发现的私有API可能用处不是特别大。</p>
-<!--更新：只需要调用[UIDebuggingInformationOverlay prepareDebuggingOverlay]私有API即可，想要调起调试页面只需要两个手机点击StatusBar即可-->
-<h2 id="2-更好用的FLEX"><a href="#2-更好用的FLEX" class="headerlink" title="2. 更好用的FLEX"></a>2. 更好用的FLEX</h2><p>在发现这个私有API之前，已经有几个调试UI的轮子，个人比较喜欢的一个是<code>Reveal</code>功能强大加界面友好到没啥说的，只是商业产品，这里推荐另一款由<code>Flipboard</code>团队开源的<code>FLEX</code>。<a href="https://github.com/Flipboard/FLEX" target="_blank" rel="external">详情还是戳此!</a>，功能列举了一大堆，除了能查看UI信息还能抓取网络接口信息，访问APP内部资源，模拟3DTouch等。</p>
-<h2 id="3-神器IPAPatch"><a href="#3-神器IPAPatch" class="headerlink" title="3. 神器IPAPatch"></a>3. 神器IPAPatch</h2><p><code>IPAPatch</code>借助苹果私有API或者<code>FLEX</code>可以说能够做的事情就是太多了。<br><code>IPAPatch</code>的这里原理就不讲了，具体的已经开源了，<a href="https://github.com/Naituw/IPAPatch" target="_blank" rel="external">详情使劲戳此!</a></p>
-<p>你需要做的：</p>
-<p>1、一个脱壳的APP(想要调试的APP)<br>2、私有API或者FLEX的framework</p>
-<p>将<code>IPAPatch</code>clone到电脑，将APP重命名为<code>app.ipa</code>放入到<code>IPAPatch</code>的<code>Assets</code>目录下，将私有API的代码写入<code>IPAPatchEntry.m</code>文件或者将<code>FLEX.framework</code>导入到<code>IPAPatch</code>的<code>Assets/Frameworks</code>目录下，在<code>IPAPatchEntry.m</code>文件中加入<code>[[FLEXManager sharedManager] showExplorer];</code></p>
-<p>然后 <code>cmd + R</code> 就等待神奇的结果吧。</p>
+        <p>最近北京地铁在房山线试运行手机刷卡，实际上就是手机支持NFC功能的方便了，鉴于市场上主流的手机都支持全功能NFC，以后出门忘记带乘车卡也可以坐地铁了，不过iPhone用户此时比较心塞，由于iPhone安全策略一直没有开放NFC功能提供开发者使用。BUT，WWDC17带来了众多功能中的NFC功能，本文在<code>iOS11 beta</code>版本上做一个小小的测试，看看功能如何。</p>
+<h2 id="要求"><a href="#要求" class="headerlink" title="要求"></a>要求</h2><ul>
+<li>iOS11</li>
+<li>iPhone7 or iPhone7 Plus</li>
+</ul>
+<h2 id="小试"><a href="#小试" class="headerlink" title="小试"></a>小试</h2><blockquote>
+<p>Talk is cheap, show me the code.</p>
+</blockquote>
+<p>查看详细文档说明请 <a href="https://developer.apple.com/documentation/corenfc" target="_blank" rel="external">移步文档</a></p>
+<h3 id="1-梳理一下文档"><a href="#1-梳理一下文档" class="headerlink" title="1.梳理一下文档"></a>1.梳理一下文档</h3><p><code>CoreNFC.framework</code>主要包含以下几个类/协议:</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">NFCError    <span class="comment">// 错误信息</span></div><div class="line">NFCReaderSession    <span class="comment">// 读取数据功能抽象基类</span></div><div class="line">NFCReaderSessionDelegate    <span class="comment">// 读取到的数据回调</span></div><div class="line">NFCTag  <span class="comment">// 支持的NFC/RFID协议</span></div><div class="line">NFCTagCommandConfiguration  <span class="comment">// 读取配置</span></div><div class="line">NFCNDEFReaderSession    <span class="comment">// 读取基类的子类</span></div><div class="line">NFCNDEFPayload  <span class="comment">// 读取到数据内容</span></div><div class="line">NFCNDEFMessage  <span class="comment">// 读取到的数据</span></div><div class="line">NFCNDEFReaderSessionDelegate    <span class="comment">// 读取数据回调</span></div></pre></td></tr></table></figure>
+<p>想要实现读取NFC功能，需要创建一个读取NFC功能的实例，查文档<code>NFCReaderSession</code> 基类不能够具体的实例化，可以借助它的子类 <code>NFCNDEFReaderSession</code> 来创建实例，此外还需要提供一个能接收回调的对象来接收NFC读取到的数据。苹果为我们提供了一个目前唯一一个工厂方法：</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">instancetype</span>)initWithDelegate:(<span class="keyword">id</span>&lt;NFCNDEFReaderSessionDelegate&gt;)delegate queue:(<span class="keyword">nullable</span> <span class="built_in">dispatch_queue_t</span>)queue invalidateAfterFirstRead:(<span class="built_in">BOOL</span>)invalidateAfterFirstRead;</div></pre></td></tr></table></figure>
+<h3 id="2-建立一个工程"><a href="#2-建立一个工程" class="headerlink" title="2.建立一个工程"></a>2.建立一个工程</h3><p>注意：这里你需要一个付费的开发者账号，如果你使用免费的开发者账号是无法开发NFC功能的。</p>
+<p>我的工程名<code>HBNFC</code>，配置工程。</p>
+<ul>
+<li><p>打开工程的读取功能，此时功能中会出现一个以工程名称命名的后缀是<code>entitlements</code>的文件，内部包含了一对数据:</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;key&gt;com.apple.developer.nfc.readersession.formats &lt;/key&gt;</div><div class="line">&lt;array&gt;</div><div class="line">	 &lt;string&gt;NDEF&lt;/string&gt;</div><div class="line">&lt;/array&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>在<code>Infor.plist</code>中添加一对儿NFC读取描述:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;key&gt;NFCReaderUsageDescription&lt;/key&gt;</div><div class="line">&lt;string&gt;您的NFC卡片&lt;/string&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>声明属性，將<code>ViewController</code>对象接收读取数据的回调信息：</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">ViewController</span> ()&lt;<span class="title">NFCNDEFReaderSessionDelegate</span>, <span class="title">NFCReaderSessionDelegate</span>&gt;</span></div><div class="line"></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) NFCNDEFReaderSession *nfcReaderSession;</div><div class="line"></div><div class="line"><span class="keyword">@end</span></div></pre></td></tr></table></figure>
+<p>添加一个按钮，按钮点击时创建获取NFC数据实例。</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">IBAction</span>)scanNFCAction:(<span class="built_in">UIButton</span> *)sender &#123;</div><div class="line">    <span class="keyword">if</span> (NFCNDEFReaderSession.readingAvailable) &#123;</div><div class="line">        _nfcReaderSession = [[NFCNDEFReaderSession alloc] initWithDelegate:<span class="keyword">self</span> queue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, <span class="number">0</span>) invalidateAfterFirstRead:<span class="literal">YES</span>];</div><div class="line">        [_nfcReaderSession beginSession];</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="meta">#pragma mark - NFCNDEFReaderSessionDelegate</span></div><div class="line">- (<span class="keyword">void</span>)readerSession:(<span class="keyword">nonnull</span> NFCNDEFReaderSession *)session didDetectNDEFs:(<span class="keyword">nonnull</span> <span class="built_in">NSArray</span>&lt;NFCNDEFMessage *&gt; *)messages &#123;</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"读取到数据：%s===%@"</span>, __FUNCTION__, messages);</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)readerSession:(<span class="keyword">nonnull</span> NFCNDEFReaderSession *)session didInvalidateWithError:(<span class="keyword">nonnull</span> <span class="built_in">NSError</span> *)error &#123;</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"读取失败：%s===%@"</span>, __FUNCTION__, error);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="meta">#pragma mark - NFCReaderSessionDelegate</span></div><div class="line">- (<span class="keyword">void</span>)readerSession:(<span class="keyword">nonnull</span> NFCReaderSession *)session didDetectTags:(<span class="keyword">nonnull</span> <span class="built_in">NSArray</span>&lt;__kindof <span class="keyword">id</span>&lt;NFCTag&gt;&gt; *)tags &#123;</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"读取到数据：%s===%@"</span>, __FUNCTION__, tags);</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)readerSessionDidBecomeActive:(<span class="keyword">nonnull</span> NFCReaderSession *)session &#123;</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"开始：%s"</span>, __FUNCTION__);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>注意：每一次只能有一个实例读取数据，读取时间<code>60s</code>，超时后只能重新创建实例读取。</p>
+<p>我的工程跑起来后点击按钮后的样子:</p>
+<p><img src="scan_nfc.jpeg" alt="扫描NFC"></p>
+<p>当我满心欢喜将公交卡贴近手机的时候，无论如何都没有log，此时可能是小弟姿势不对了？然后查看了 <code>iOS11 Realse Notes</code>:</p>
+<p><img src="new_issues.png" alt="New issues"></p>
+<p>到此，只是NFC功能小试结束，目前Apple只开放了NFC读取的权限，相信在合适的时候还会开放更多功能。</p>
+<p>以上：如果有错误或者任何问题欢迎指正(评论系统集成的Disqus，所以你可能看不见🙈🤷‍♂️)！！！</p>
 
       
     </div>
@@ -440,7 +454,7 @@
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="http://honeyeeb.com/2017/05/27/调试别人的APP/" title="调试别人的APP">http://honeyeeb.com/2017/05/27/调试别人的APP/</a>
+      <a href="http://honeyeeb.com/2017/06/28/CoreNFC小试/" title="CoreNFC小试">http://honeyeeb.com/2017/06/28/CoreNFC小试/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明： </strong>
@@ -458,7 +472,7 @@
           
             <a href="/tags/iOS/" rel="tag"># iOS</a>
           
-            <a href="/tags/iOSRE/" rel="tag"># iOSRE</a>
+            <a href="/tags/CoreNFC/" rel="tag"># CoreNFC</a>
           
         </div>
       
@@ -471,8 +485,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/17/Xcode马虎导致的坑/" rel="next" title="Xcode马虎导致的坑">
-                <i class="fa fa-chevron-left"></i> Xcode马虎导致的坑
+              <a href="/2017/06/13/delegate使用新想法/" rel="next" title="delegate使用新想法">
+                <i class="fa fa-chevron-left"></i> delegate使用新想法
               </a>
             
           </div>
@@ -480,10 +494,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/06/13/delegate使用新想法/" rel="prev" title="delegate使用新想法">
-                delegate使用新想法 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -653,7 +663,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-新发现私有API"><span class="nav-number">1.</span> <span class="nav-text">1. 新发现私有API</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-更好用的FLEX"><span class="nav-number">2.</span> <span class="nav-text">2. 更好用的FLEX</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-神器IPAPatch"><span class="nav-number">3.</span> <span class="nav-text">3. 神器IPAPatch</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#要求"><span class="nav-number">1.</span> <span class="nav-text">要求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小试"><span class="nav-number">2.</span> <span class="nav-text">小试</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-梳理一下文档"><span class="nav-number">2.1.</span> <span class="nav-text">1.梳理一下文档</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-建立一个工程"><span class="nav-number">2.2.</span> <span class="nav-text">2.建立一个工程</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -816,9 +826,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://honeyeeb.com/2017/05/27/调试别人的APP/';
-          this.page.identifier = '2017/05/27/调试别人的APP/';
-          this.page.title = '调试别人的APP';
+          this.page.url = 'http://honeyeeb.com/2017/06/28/CoreNFC小试/';
+          this.page.identifier = '2017/06/28/CoreNFC小试/';
+          this.page.title = 'CoreNFC小试';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://honeyeeb.disqus.com/embed.js';
