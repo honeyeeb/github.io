@@ -386,12 +386,12 @@
 
       
         <h2 id="1-新发现私有API"><a href="#1-新发现私有API" class="headerlink" title="1. 新发现私有API"></a>1. 新发现私有API</h2><p>今天上午iOS技术圈有一些骚动，原因就是<code>图图</code>发布了一条微博:</p>
-<p><img src="debugger_weibo.jpg" alt="图图的微博" width="40%" height="40%"></p>
+<p><img src="debugger_weibo.jpg" alt="图图的微博"></p>
 <p>内容是国外友人在浏览iOS 私有库的时候发现苹果大大隐藏了一个功能，这个功能提供苹果的工程师调试APP，在APP内可以查看APP的UI等信息。<a href="http://ryanipete.com/blog/ios/swift/objective-c/uidebugginginformationoverlay/" target="_blank" rel="external">戳次查看文章内容!</a></p>
 <p>主要调用<code>UIKit.framework</code>的两个私有API:</p>
 <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">Class overClass = <span class="built_in">NSClassFromString</span>(<span class="string">@"UIDebuggingInformationOverlay"</span>);</div><div class="line">    SEL overSel = <span class="built_in">NSSelectorFromString</span>(<span class="string">@"prepareDebuggingOverlay"</span>);</div><div class="line">    <span class="keyword">if</span> (overClass &amp;&amp; overSel) &#123;</div><div class="line"><span class="meta">#pragma clang diagnostic push</span></div><div class="line"><span class="meta">#pragma clang diagnostic ignored <span class="meta-string">"-Warc-performSelector-leaks"</span></span></div><div class="line">        [overClass performSelector:overSel];</div><div class="line"><span class="meta">#pragma clang diagnostic pop</span></div><div class="line">    &#125;</div></pre></td></tr></table></figure>
 <p>启动APP后主要界面张这个样子:</p>
-<p><img src="uidebugginginformationoverlay_0.png" alt="启动后界面" width="40%" height="40%"></p>
+<p><img src="uidebugginginformationoverlay_0.png" alt="启动后界面"></p>
 <p>因为是私有API，这段代码是不能直接使用的，也不能提交到App Store上，所以我认为你可以在公司提交版本内测或者开发过程中加入，这样发现bug的时候iOS工程师就顺利的发现问题。</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> overlayClass = <span class="type">NSClassFromString</span>(<span class="string">"UIDebuggingInformationOverlay"</span>) <span class="keyword">as</span>? <span class="type">UIWindow</span>.<span class="type">Type</span></div><div class="line"><span class="number">_</span> = overlayClass?.perform(<span class="type">NSSelectorFromString</span>(<span class="string">"prepareDebuggingOverlay"</span>))</div><div class="line"><span class="keyword">let</span> overlay = overlayClass?.perform(<span class="type">NSSelectorFromString</span>(<span class="string">"overlay"</span>)).takeUnretainedValue() <span class="keyword">as</span>? <span class="type">UIWindow</span></div><div class="line"><span class="number">_</span> = overlay?.perform(<span class="type">NSSelectorFromString</span>(<span class="string">"toggleVisibility"</span>))</div></pre></td></tr></table></figure>
 <p>私认为在实际开发中Xcode内置更加友好且功能完善的UI查看工具，界面和<code>Reveal</code>也很相似，新发现的私有API可能用处不是特别大。</p>
@@ -622,6 +622,10 @@
               
                 <li class="links-of-blogroll-item">
                   <a href="http://blog.wangchen.us/" title="Andy" target="_blank">Andy</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://wangchenge.com/" title="忘尘阁" target="_blank">忘尘阁</a>
                 </li>
               
             </ul>
