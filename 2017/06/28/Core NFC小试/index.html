@@ -248,16 +248,6 @@ iPhone7 or">
         </li>
       
         
-        <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-about">
           <a href="/about" rel="section">
             
@@ -423,7 +413,7 @@ iPhone7 or">
 <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">IBAction</span>)scanNFCAction:(<span class="built_in">UIButton</span> *)sender &#123;</div><div class="line">    <span class="keyword">if</span> (NFCNDEFReaderSession.readingAvailable) &#123;</div><div class="line">        _nfcReaderSession = [[NFCNDEFReaderSession alloc] initWithDelegate:<span class="keyword">self</span> queue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, <span class="number">0</span>) invalidateAfterFirstRead:<span class="literal">YES</span>];</div><div class="line">        [_nfcReaderSession beginSession];</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="meta">#pragma mark - NFCNDEFReaderSessionDelegate</span></div><div class="line">- (<span class="keyword">void</span>)readerSession:(<span class="keyword">nonnull</span> NFCNDEFReaderSession *)session didDetectNDEFs:(<span class="keyword">nonnull</span> <span class="built_in">NSArray</span>&lt;NFCNDEFMessage *&gt; *)messages &#123;</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"读取到数据：%s===%@"</span>, __FUNCTION__, messages);</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)readerSession:(<span class="keyword">nonnull</span> NFCNDEFReaderSession *)session didInvalidateWithError:(<span class="keyword">nonnull</span> <span class="built_in">NSError</span> *)error &#123;</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"读取失败：%s===%@"</span>, __FUNCTION__, error);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="meta">#pragma mark - NFCReaderSessionDelegate</span></div><div class="line">- (<span class="keyword">void</span>)readerSession:(<span class="keyword">nonnull</span> NFCReaderSession *)session didDetectTags:(<span class="keyword">nonnull</span> <span class="built_in">NSArray</span>&lt;__kindof <span class="keyword">id</span>&lt;NFCTag&gt;&gt; *)tags &#123;</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"读取到数据：%s===%@"</span>, __FUNCTION__, tags);</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)readerSessionDidBecomeActive:(<span class="keyword">nonnull</span> NFCReaderSession *)session &#123;</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"开始：%s"</span>, __FUNCTION__);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>注意：每一次只能有一个实例读取数据，读取时间<code>60s</code>，超时后只能重新创建实例读取。</p>
 <p>我的工程跑起来后点击按钮后的样子:</p>
-<p><img src="scan_nfc.jpeg" alt="扫描NFC" width="40%" height="40%"></p>
+<p><img src="scan_nfc.jpeg" alt="扫描NFC"></p>
 <p>当我满心欢喜将公交卡贴近手机的时候，无论如何都没有log，此时可能是小弟姿势不对了？然后查看了 <code>iOS11 Realse Notes</code>:</p>
 <p><img src="new_issues.png" alt="New issues"></p>
 <p>到此，只是NFC功能小试结束(为了凑篇幅心虚的贴了大段大段代码)，目前Apple只开放了NFC读取的权限，相信在合适的时候还会开放更多功能。</p>
