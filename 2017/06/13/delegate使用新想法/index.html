@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 
 
 
@@ -11,6 +11,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="google-site-verification" content="IEg0jOk0olE2dZjsdPKwR2--D0EbpWkqIU35rT7C_bA" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
 
 
 
@@ -36,36 +40,11 @@
 
 
 
+
   
   
   <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
-
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
 
 
 
@@ -74,7 +53,22 @@
 
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
 
 
   <meta name="keywords" content="iOS," />
@@ -82,11 +76,6 @@
 
 
 
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
 
 
 
@@ -117,9 +106,11 @@ delegate &amp;amp; struct最近在阅读SRSocketRocket源代码时候发现了�
   var CONFIG = {
     root: '/',
     scheme: 'Mist',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
-    motion: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
       userId: '0',
       author: '博主'
@@ -143,10 +134,6 @@ delegate &amp;amp; struct最近在阅读SRSocketRocket源代码时候发现了�
 
 
   <title>delegate使用新想法 | honeyeeb's blog</title>
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
   
 
 
@@ -175,18 +162,16 @@ delegate &amp;amp; struct最近在阅读SRSocketRocket源代码时候发现了�
 
 
 
+</head>
 
-
-
-
-
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
     
   
 
-  <div class="container sidebar-position-left page-post-detail ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -233,21 +218,11 @@ delegate &amp;amp; struct最近在阅读SRSocketRocket源代码时候发现了�
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
+          <a href="/archives/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            关于
           </a>
         </li>
       
@@ -289,7 +264,11 @@ delegate &amp;amp; struct最近在阅读SRSocketRocket源代码时候发现了�
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://honeyeeb.com/2017/06/13/delegate使用新想法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -354,7 +333,7 @@ delegate &amp;amp; struct最近在阅读SRSocketRocket源代码时候发现了�
                  <i class="fa fa-eye"></i>
                </span>
                
-                 <span class="post-meta-item-text">阅读次数 </span>
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
                
                  <span class="leancloud-visitors-count"></span>
              </span>
@@ -370,6 +349,9 @@ delegate &amp;amp; struct最近在阅读SRSocketRocket源代码时候发现了�
       </header>
     
 
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -397,42 +379,33 @@ delegate &amp;amp; struct最近在阅读SRSocketRocket源代码时候发现了�
 
       
     </div>
+    
+    
+    
 
-    <div>
-      
-        
+    
 
-      
-    </div>
+    
 
-    <div>
-      
-        
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    honeyeeb
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://honeyeeb.com/2017/06/13/delegate使用新想法/" title="delegate使用新想法">http://honeyeeb.com/2017/06/13/delegate使用新想法/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
 
-      
-    </div>
-
-    <div>
-      
-        
-  <ul class="post-copyright">
-    <li class="post-copyright-author">
-      <strong>本文作者：</strong>
-      honeyeeb
-    </li>
-    <li class="post-copyright-link">
-      <strong>本文链接：</strong>
-      <a href="http://honeyeeb.com/2017/06/13/delegate使用新想法/" title="delegate使用新想法">http://honeyeeb.com/2017/06/13/delegate使用新想法/</a>
-    </li>
-    <li class="post-copyright-license">
-      <strong>版权声明： </strong>
-      本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
-    </li>
-  </ul>
-
-
-      
-    </div>
+      </div>
+    
 
     <footer class="post-footer">
       
@@ -444,7 +417,7 @@ delegate &amp;amp; struct最近在阅读SRSocketRocket源代码时候发现了�
       
 
       
-        
+      
       
 
       
@@ -472,6 +445,10 @@ delegate &amp;amp; struct最近在阅读SRSocketRocket源代码时候发现了�
       
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -487,16 +464,19 @@ delegate &amp;amp; struct最近在阅读SRSocketRocket源代码时候发现了�
 
 
           
-  <div class="comments" id="comments">
-    
+
+  
+    <div class="comments" id="comments">
       <div id="disqus_thread">
         <noscript>
           Please enable JavaScript to view the
           <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
         </noscript>
       </div>
-    
-  </div>
+    </div>
+
+  
+
 
 
         </div>
@@ -512,119 +492,86 @@ delegate &amp;amp; struct最近在阅读SRSocketRocket源代码时候发现了�
   </div>
 
   <aside id="sidebar" class="sidebar">
+    
     <div class="sidebar-inner">
 
       
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目录
           </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
             站点概览
           </li>
         </ul>
       
 
-      <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avatar.png"
-               alt="honeyeeb" />
-          <p class="site-author-name" itemprop="name">honeyeeb</p>
-           
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.png"
+                alt="honeyeeb" />
+            
+              <p class="site-author-name" itemprop="name">honeyeeb</p>
               <p class="site-description motion-element" itemprop="description">胡乱记录点经历</p>
-          
-        </div>
-        <nav class="site-state motion-element">
-
-          
-            <div class="site-state-item site-state-posts">
-              <a href="/archives">
-                <span class="site-state-item-count">6</span>
-                <span class="site-state-item-name">日志</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-categories">
-              
-                <span class="site-state-item-count">1</span>
-                <span class="site-state-item-name">分类</span>
-              
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-tags">
-              
-                <span class="site-state-item-count">4</span>
-                <span class="site-state-item-name">标签</span>
-              
-            </div>
-          
-
-        </nav>
-
-        
-
-        <div class="links-of-author motion-element">
-          
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/honeyeeb" target="_blank" title="GitHub" rel="external nofollow">
-                  
-                    <i class="fa fa-fw fa-github"></i>
-                  
-                  GitHub
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://weibo.com/2513940557" target="_blank" title="Weibo" rel="external nofollow">
-                  
-                    <i class="fa fa-fw fa-weibo"></i>
-                  
-                  Weibo
-                </a>
-              </span>
-            
-          
-        </div>
-
-        
-        
-
-        
-        
-          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
-            <div class="links-of-blogroll-title">
-              <i class="fa  fa-fw fa-globe"></i>
-              友情链接
-            </div>
-            <ul class="links-of-blogroll-list">
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://blog.wangchen.us/" title="Andy" target="_blank">Andy</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://wangchenge.com/" title="忘尘阁" target="_blank">忘尘阁</a>
-                </li>
-              
-            </ul>
           </div>
-        
 
-        
+          <nav class="site-state motion-element">
 
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
 
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
       </section>
 
       
@@ -657,27 +604,27 @@ delegate &amp;amp; struct最近在阅读SRSocketRocket源代码时候发现了�
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy; 
-  <span itemprop="copyrightYear">2017</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
-    <i class="fa fa-heart"></i>
+    <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">honeyeeb</span>
+
+  
 </div>
 
 
-<div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io" rel="external nofollow">Hexo</a> 强力驱动
-</div>
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow">
-    NexT.Mist
-  </a>
-</div>
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.3</div>
+
+
 
 
         
@@ -702,6 +649,12 @@ delegate &amp;amp; struct最近在阅读SRSocketRocket源代码时候发现了�
 </div>
 
 
+
+
+
+
+
+
         
       </div>
     </footer>
@@ -711,6 +664,8 @@ delegate &amp;amp; struct最近在阅读SRSocketRocket源代码时候发现了�
         <i class="fa fa-arrow-up"></i>
         
       </div>
+    
+
     
 
   </div>
@@ -745,46 +700,58 @@ delegate &amp;amp; struct最近在阅读SRSocketRocket源代码时候发现了�
 
 
   
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-
   
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
-
-
-
-  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
   
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
 
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
 
 
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
 
 
 
@@ -828,16 +795,10 @@ delegate &amp;amp; struct最近在阅读SRSocketRocket源代码时候发现了�
 
 
 
-  
 
 
 
 
-
-
-
-
-  
 
 
 
@@ -845,8 +806,14 @@ delegate &amp;amp; struct最近在阅读SRSocketRocket源代码时候发现了�
 
   
 
+
+
+
+
   
-  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
   <script>AV.initialize("fi01FPbGPi3VF3QrrqqCK7dT-gzGzoHsz", "5oPq395KTxwU7oFhFaoDgbTo");</script>
   <script>
     function showTime(Counter) {
@@ -952,6 +919,9 @@ delegate &amp;amp; struct最近在阅读SRSocketRocket源代码时候发现了�
 
 
 
+  
+
+  
   
 
   
