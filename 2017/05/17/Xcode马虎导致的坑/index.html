@@ -92,7 +92,7 @@ switch issue平时在开发中有时会用到switch语句，大学时候老师�
 <meta property="og:description" content="在开发中经常会因为自己的马虎遇到一些bug，给自己挖了一个坑，这里记录一下我自己给自己挖的坑。
 switch issue平时在开发中有时会用到switch语句，大学时候老师教我们使用if..else..来代替switch，但是有时会我更喜欢switch语句，举个栗子🌰：
 1234567891011121314151617181920212223242526272829303132typedef">
-<meta property="og:updated_time" content="2017-05-17T14:24:11.000Z">
+<meta property="og:updated_time" content="2017-10-26T11:06:04.673Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Xcode马虎导致的坑">
 <meta name="twitter:description" content="在开发中经常会因为自己的马虎遇到一些bug，给自己挖了一个坑，这里记录一下我自己给自己挖的坑。
@@ -376,6 +376,8 @@ switch issue平时在开发中有时会用到switch语句，大学时候老师�
 <p>可是预期的结果：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">one and two</div><div class="line">three</div></pre></td></tr></table></figure></p>
 <p>Xcode是可以正常编译运行的，仔细查看了代码才知道原因，<code>HBHelloOne、HBHelloTwo</code>本意是使用同一个处理，结果在书写的时候漏掉了关键字<code>case</code>：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">case</span> HBHelloTwo:</div></pre></td></tr></table></figure></p>
 <p>引以为戒！</p>
+<div class="note info"><p>以上：如果有错误或者任何问题欢迎指正(评论系统集成的Disqus，所以你可能看不见🙈🤷‍♂️)！！！</p>
+<p>如果你还没有顺手的科学上网工具，推荐一个我正在用的<a href="http://my.yizhihongxing.hk/aff.php?aff=6311" target="_blank" rel="external">SSR服务</a>, 多条线路可供选择使用，一年不限流量 <code>¥200</code> 。现在购买的时候输入优惠码 <code>qj80</code> 还享受 <code>八折</code> 优惠！</p></div>
 
       
     </div>
