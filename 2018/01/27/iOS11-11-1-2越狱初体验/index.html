@@ -120,7 +120,7 @@
 支持的版本所有iOS系统版本在11.0～11.1.2之间，并且是arm64的机器，也就是说你的手机至少是 iPhone5s。
 注">
 <meta property="og:image" content="http://honeyeeb.com/2018/01/27/iOS11-11-1-2越狱初体验/wechat_assistant.PNG">
-<meta property="og:updated_time" content="2018-01-29T06:37:25.915Z">
+<meta property="og:updated_time" content="2018-01-29T08:31:53.926Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS11~11.1.2越狱初体验">
 <meta name="twitter:description" content="iOS11.0 ~ 11.1.2的非完美越狱在 2017年圣诞节就可以了，现在网上也有几个越狱工具，比较有名的是 Jonathan Levin 写的LiberiOS 和 Coolstar写的 Electra，其中 Jonathan Levin 也提供了 tvOS的越狱。
@@ -430,7 +430,7 @@
 <li>返回上一个 Terminal 输入：</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">6. iPhone root<span class="comment"># tar xvf bfinject.tar</span></div></pre></td></tr></table></figure>
-<h3 id="下载微信插件"><a href="#下载微信插件" class="headerlink" title="下载微信插件"></a>下载微信插件</h3><p>一开始想直接使用前辈们的工作<a href="https://github.com/TKkk-iOSer/WeChatPlugin-iOS" target="_blank" rel="external">iOS 版微信小助手</a>，结果编译好后，注入微信失败。索性就改造了一下代码，放在了<a href="">我的GitHub</a>，里面有编译好的动态库可以直接使用，如果想自己扩展内容，可以fork一份代码自己改造。</p>
+<h3 id="下载微信插件"><a href="#下载微信插件" class="headerlink" title="下载微信插件"></a>下载微信插件</h3><p>一开始想直接使用前辈们的工作<a href="https://github.com/TKkk-iOSer/WeChatPlugin-iOS" target="_blank" rel="external">iOS 版微信小助手</a>，结果编译好后，注入微信失败。索性就改造了一下代码，放在了<a href="https://github.com/honeyeeb/WeChatPluginiOS_captain" target="_blank" rel="external">我的GitHub</a>，里面有编译好的动态库可以直接使用，如果想自己扩展内容，可以fork一份代码自己改造。</p>
 <p><em>注意⚠️：本项目只是开发者研究娱乐使用，禁止非法。项目使用了 MonkeyDev ，详细请参考文章末尾链接</em></p>
 <p>将下载或者编译好的插件拷贝到越狱机器：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Mac user<span class="comment"># scp WeChatiOS_captain.dylib root@192.168.37.192:/jb/bfinject/dylibs</span></div><div class="line"></div><div class="line">root@192.168.37.192<span class="string">'s password:</span></div><div class="line">WeChatiOS_captain.dylib  100%  330KB   1.7MB/s   00:00</div></pre></td></tr></table></figure>
