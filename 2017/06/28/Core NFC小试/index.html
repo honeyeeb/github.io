@@ -9,9 +9,11 @@
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="google-site-verification" content="IEg0jOk0olE2dZjsdPKwR2--D0EbpWkqIU35rT7C_bA" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
+
+
+
 
 
 
@@ -53,33 +55,58 @@
 
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=6.0.2" rel="stylesheet" type="text/css" />
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.2">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.2">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.2">
 
 
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.2" color="#222">
 
 
 
 
 
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.0.2',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  
   <meta name="keywords" content="CoreNFC,iOS," />
-
-
-
-
-
-
-
-
 
 
 <meta name="description" content="最近北京地铁在房山线试运行手机刷卡，实际上就是手机支持NFC功能的方便了，鉴于市场上主流的手机都支持全功能NFC，以后出门忘记带乘车卡也可以坐地铁了，不过iPhone用户此时比较心塞，由于iPhone安全策略一直没有开放NFC功能提供开发者使用。BUT，WWDC17带来了众多功能中的NFC功能，本文在iOS11 beta版本上做一个小小的测试，看看功能如何。
@@ -96,7 +123,7 @@ iOS11
 iPhone7 or">
 <meta property="og:image" content="http://honeyeeb.com/scan_nfc.jpeg">
 <meta property="og:image" content="http://honeyeeb.com/new_issues.png">
-<meta property="og:updated_time" content="2017-10-26T11:05:40.481Z">
+<meta property="og:updated_time" content="2018-01-28T03:28:56.095Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Core NFC小试">
 <meta name="twitter:description" content="最近北京地铁在房山线试运行手机刷卡，实际上就是手机支持NFC功能的方便了，鉴于市场上主流的手机都支持全功能NFC，以后出门忘记带乘车卡也可以坐地铁了，不过iPhone用户此时比较心塞，由于iPhone安全策略一直没有开放NFC功能提供开发者使用。BUT，WWDC17带来了众多功能中的NFC功能，本文在iOS11 beta版本上做一个小小的测试，看看功能如何。
@@ -107,36 +134,10 @@ iPhone7 or">
 
 
 
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Mist',
-    version: '5.1.3',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
 
 
 
   <link rel="canonical" href="http://honeyeeb.com/2017/06/28/Core NFC小试/"/>
-
-
-
 
 
   <title>Core NFC小试 | honeyeeb's blog</title>
@@ -145,14 +146,15 @@ iPhone7 or">
 
 
 
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-97441090-1"></script>
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-97441090-1', 'auto');
-  ga('send', 'pageview');
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-97441090-1');
 </script>
+
 
 
   <script type="text/javascript">
@@ -168,6 +170,33 @@ iPhone7 or">
 
 
 
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -181,7 +210,7 @@ iPhone7 or">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
+      <div class="header-inner"> <div class="site-brand-wrapper">
   <div class="site-meta ">
     
 
@@ -215,41 +244,25 @@ iPhone7 or">
         
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
+            首页</a>
         </li>
       
         
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
+            归档</a>
         </li>
       
         
         <li class="menu-item menu-item-tags">
           <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
-          </a>
+            标签</a>
         </li>
       
         
         <li class="menu-item menu-item-commonweal">
           <a href="/404.html" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
-            
-            公益404
-          </a>
+            公益404</a>
         </li>
       
 
@@ -261,9 +274,15 @@ iPhone7 or">
 </nav>
 
 
+  
+
+
 
  </div>
     </header>
+
+    
+
 
     <main id="main" class="main">
       <div class="main-inner">
@@ -278,6 +297,8 @@ iPhone7 or">
 
   
   
+  
+
   
 
   <article class="post post-type-tags" itemscope itemtype="http://schema.org/Article">
@@ -314,11 +335,10 @@ iPhone7 or">
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-28T17:05:20+08:00">
-                2017-06-28
-              </time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-28T17:05:20+08:00">2017-06-28</time>
             
 
+            
             
 
             
@@ -426,17 +446,13 @@ iPhone7 or">
       <div>
         <ul class="post-copyright">
   <li class="post-copyright-author">
-    <strong>本文作者：</strong>
-    honeyeeb
-  </li>
+    <strong>本文作者：</strong>honeyeeb</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     <a href="http://honeyeeb.com/2017/06/28/Core NFC小试/" title="Core NFC小试">http://honeyeeb.com/2017/06/28/Core NFC小试/</a>
   </li>
   <li class="post-copyright-license">
-    <strong>版权声明： </strong>
-    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
-  </li>
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="CC BY-NC-SA 3.0" rel="external nofollow" target="_blank">undefined</a> 许可协议。转载请注明出处！</li>
 </ul>
 
       </div>
@@ -471,6 +487,10 @@ iPhone7 or">
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2018/01/27/iOS11-11-1-2越狱初体验/" rel="prev" title="iOS11~11.1.2越狱初体验">
+                iOS11~11.1.2越狱初体验 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -493,9 +513,6 @@ iPhone7 or">
 
 
           </div>
-          
-
-
           
 
   
@@ -553,48 +570,62 @@ iPhone7 or">
               <p class="site-description motion-element" itemprop="description">胡乱记录点经历</p>
           </div>
 
-          <nav class="site-state motion-element">
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
 
-            
-              <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
               
-                  <span class="site-state-item-count">6</span>
-                  <span class="site-state-item-name">日志</span>
-                </a>
-              </div>
-            
 
-            
               
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
               
-              <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
-                  <span class="site-state-item-count">1</span>
-                  <span class="site-state-item-name">分类</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
-                  <span class="site-state-item-name">标签</span>
-                </a>
-              </div>
-            
-
-          </nav>
+            </nav>
+          
 
           
 
-          <div class="links-of-author motion-element">
-            
-          </div>
+          
 
           
           
@@ -633,6 +664,9 @@ iPhone7 or">
           
 
           
+            
+          
+          
 
         </div>
       </section>
@@ -667,14 +701,18 @@ iPhone7 or">
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">honeyeeb</span>
 
   
+
+  
 </div>
+
+
 
 
   <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
@@ -685,7 +723,7 @@ iPhone7 or">
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.3</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Mist</a> v6.0.2</div>
 
 
 
@@ -749,7 +787,13 @@ iPhone7 or">
 
 
 
+
+
+
   
+
+
+
 
 
 
@@ -765,16 +809,6 @@ iPhone7 or">
   
   
     <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
   
 
   
@@ -796,52 +830,53 @@ iPhone7 or">
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.2"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.2"></script>
 
 
 
   
+  
 
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.2"></script>
 
 
 
   
 
 
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.2"></script>
+
+
+
   
 
-    
-      <script id="dsq-count-scr" src="https://honeyeeb.disqus.com/count.js" async></script>
-    
+  
+    <script id="dsq-count-scr" src="https://honeyeeb.disqus.com/count.js" async></script>
+  
 
-    
-      <script type="text/javascript">
-        var disqus_config = function () {
-          this.page.url = 'http://honeyeeb.com/2017/06/28/Core NFC小试/';
-          this.page.identifier = '2017/06/28/Core NFC小试/';
-          this.page.title = 'Core NFC小试';
-        };
+  
+    <script type="text/javascript">
+      var disqus_config = function () {
+        this.page.url = 'http://honeyeeb.com/2017/06/28/Core NFC小试/';
+        this.page.identifier = '2017/06/28/Core NFC小试/';
+        this.page.title = 'Core NFC小试';
+      };
+      function loadComments () {
         var d = document, s = d.createElement('script');
         s.src = 'https://honeyeeb.disqus.com/embed.js';
         s.setAttribute('data-timestamp', '' + +new Date());
         (d.head || d.body).appendChild(s);
-      </script>
-    
-
+      }
+      
+        loadComments();
+      
+    </script>
   
+
 
 
 
@@ -853,8 +888,6 @@ iPhone7 or">
 
 
   
-
-
 
 
 
@@ -985,6 +1018,12 @@ iPhone7 or">
   
 
   
+
+  
+
+  
+  
+
   
 
   

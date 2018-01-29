@@ -106,35 +106,37 @@
 
 
   
-  <meta name="keywords" content="iOS," />
+  <meta name="keywords" content="iOS,iOSRE," />
 
 
-<meta name="description" content="平时工作肯定会遇到delegate的使用，比较常用的UITableViewDelegate、UITableViewDataSource， 有关delegate的特点以及使用可以参考苹果官方文档。
-delegate &amp;amp; struct最近在阅读SRSocketRocket源代码时候发现了一个之前没接触过的方式，代码中为protocol包装了一层，使用struct构建一个对象来标识实现这个协议的">
+<meta name="description" content="iOS11.0 ~ 11.1.2的非完美越狱在 2017年圣诞节就可以了，现在网上也有几个越狱工具，比较有名的是 Jonathan Levin 写的LiberiOS 和 Coolstar写的 Electra，其中 Jonathan Levin 也提供了 tvOS的越狱。
+支持的版本所有iOS系统版本在11.0～11.1.2之间，并且是arm64的机器，也就是说你的手机至少是 iPhone5s。
+注">
 <meta property="og:type" content="article">
-<meta property="og:title" content="delegate使用新想法">
-<meta property="og:url" content="http://honeyeeb.com/2017/06/13/delegate使用新想法/index.html">
+<meta property="og:title" content="iOS11~11.1.2越狱初体验">
+<meta property="og:url" content="http://honeyeeb.com/2018/01/27/iOS11-11-1-2越狱初体验/index.html">
 <meta property="og:site_name" content="honeyeeb's blog">
-<meta property="og:description" content="平时工作肯定会遇到delegate的使用，比较常用的UITableViewDelegate、UITableViewDataSource， 有关delegate的特点以及使用可以参考苹果官方文档。
-delegate &amp;amp; struct最近在阅读SRSocketRocket源代码时候发现了一个之前没接触过的方式，代码中为protocol包装了一层，使用struct构建一个对象来标识实现这个协议的">
-<meta property="og:image" content="http://honeyeeb.com/delegate_wrapper_0.png">
-<meta property="og:image" content="http://honeyeeb.com/delegate_wrapper_1.png">
-<meta property="og:updated_time" content="2018-01-28T03:30:21.691Z">
+<meta property="og:description" content="iOS11.0 ~ 11.1.2的非完美越狱在 2017年圣诞节就可以了，现在网上也有几个越狱工具，比较有名的是 Jonathan Levin 写的LiberiOS 和 Coolstar写的 Electra，其中 Jonathan Levin 也提供了 tvOS的越狱。
+支持的版本所有iOS系统版本在11.0～11.1.2之间，并且是arm64的机器，也就是说你的手机至少是 iPhone5s。
+注">
+<meta property="og:image" content="http://honeyeeb.com/2018/01/27/iOS11-11-1-2越狱初体验/wechat_assistant.PNG">
+<meta property="og:updated_time" content="2018-01-29T06:37:25.915Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="delegate使用新想法">
-<meta name="twitter:description" content="平时工作肯定会遇到delegate的使用，比较常用的UITableViewDelegate、UITableViewDataSource， 有关delegate的特点以及使用可以参考苹果官方文档。
-delegate &amp;amp; struct最近在阅读SRSocketRocket源代码时候发现了一个之前没接触过的方式，代码中为protocol包装了一层，使用struct构建一个对象来标识实现这个协议的">
-<meta name="twitter:image" content="http://honeyeeb.com/delegate_wrapper_0.png">
+<meta name="twitter:title" content="iOS11~11.1.2越狱初体验">
+<meta name="twitter:description" content="iOS11.0 ~ 11.1.2的非完美越狱在 2017年圣诞节就可以了，现在网上也有几个越狱工具，比较有名的是 Jonathan Levin 写的LiberiOS 和 Coolstar写的 Electra，其中 Jonathan Levin 也提供了 tvOS的越狱。
+支持的版本所有iOS系统版本在11.0～11.1.2之间，并且是arm64的机器，也就是说你的手机至少是 iPhone5s。
+注">
+<meta name="twitter:image" content="http://honeyeeb.com/2018/01/27/iOS11-11-1-2越狱初体验/wechat_assistant.PNG">
 
 
 
 
 
 
-  <link rel="canonical" href="http://honeyeeb.com/2017/06/13/delegate使用新想法/"/>
+  <link rel="canonical" href="http://honeyeeb.com/2018/01/27/iOS11-11-1-2越狱初体验/"/>
 
 
-  <title>delegate使用新想法 | honeyeeb's blog</title>
+  <title>iOS11~11.1.2越狱初体验 | honeyeeb's blog</title>
   
 
 
@@ -295,12 +297,12 @@ delegate &amp;amp; struct最近在阅读SRSocketRocket源代码时候发现了�
 
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-tags" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://honeyeeb.com/2017/06/13/delegate使用新想法/">
+    <link itemprop="mainEntityOfPage" href="http://honeyeeb.com/2018/01/27/iOS11-11-1-2越狱初体验/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="honeyeeb">
@@ -317,7 +319,7 @@ delegate &amp;amp; struct最近在阅读SRSocketRocket源代码时候发现了�
 
         
         
-          <h1 class="post-title" itemprop="name headline">delegate使用新想法</h1>
+          <h1 class="post-title" itemprop="name headline">iOS11~11.1.2越狱初体验</h1>
         
 
         <div class="post-meta">
@@ -329,7 +331,7 @@ delegate &amp;amp; struct最近在阅读SRSocketRocket源代码时候发现了�
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-13T16:51:55+08:00">2017-06-13</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-27T18:01:05+08:00">2018-01-27</time>
             
 
             
@@ -347,9 +349,9 @@ delegate &amp;amp; struct最近在阅读SRSocketRocket源代码时候发现了�
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/06/13/delegate使用新想法/#comments" itemprop="discussionUrl">
+                <a href="/2018/01/27/iOS11-11-1-2越狱初体验/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/06/13/delegate使用新想法/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2018/01/27/iOS11-11-1-2越狱初体验/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -357,7 +359,7 @@ delegate &amp;amp; struct最近在阅读SRSocketRocket源代码时候发现了�
 
           
           
-             <span id="/2017/06/13/delegate使用新想法/" class="leancloud_visitors" data-flag-title="delegate使用新想法">
+             <span id="/2018/01/27/iOS11-11-1-2越狱初体验/" class="leancloud_visitors" data-flag-title="iOS11~11.1.2越狱初体验">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -388,26 +390,61 @@ delegate &amp;amp; struct最近在阅读SRSocketRocket源代码时候发现了�
       
 
       
-        <p>平时工作肯定会遇到<code>delegate</code>的使用，比较常用的<code>UITableViewDelegate</code>、<code>UITableViewDataSource</code>， 有关<code>delegate</code>的特点以及使用可以参考<a href="https://developer.apple.com/library/content/documentation/General/Conceptual/DevPedia-CocoaCore/Delegation.html" target="_blank" rel="external">苹果官方文档</a>。</p>
-<h2 id="delegate-amp-struct"><a href="#delegate-amp-struct" class="headerlink" title="delegate &amp; struct"></a>delegate &amp; struct</h2><p>最近在阅读<a href="https://github.com/facebook/SocketRocket" target="_blank" rel="external">SRSocketRocket</a>源代码时候发现了一个之前没接触过的方式，代码中为<code>protocol</code>包装了一层，使用<code>struct</code>构建一个对象来标识实现这个协议的对象都实现了哪些方法：</p>
-<p> <img src="delegate_wrapper_0.png" alt="delegateWrapper"><br> <img src="delegate_wrapper_1.png" alt="delegateWrapper"></p>
-<p>我为此写了一个<a href="https://github.com/honeyeeb/delegateWrapper" target="_blank" rel="external">Demo</a>，简单的介绍了这种新的方式。</p>
-<h2 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h2><p>Demo比较简单，三个页面用来区分平时使用方法和这次新的使用方法。</p>
-<p>首先定义了一个协议<code>HBDemoProtocol</code>，包含两个接口给要实现者去实现。</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)sayHello;</div><div class="line">- (<span class="keyword">void</span>)sayBye;</div></pre></td></tr></table></figure>
-<p><code>ViewController</code>是APP启动看见的页面，<br><code>一般实现</code>按钮将页面带入平时使用方式调用页面；<br><code>包装实现</code>按钮将页面带入这次新方法调用页面。</p>
-<h3 id="Origin"><a href="#Origin" class="headerlink" title="Origin"></a>Origin</h3><p>定义<code>HBOriginModel</code>对象用来调用<code>HBDemoProtocol</code>的实现。<br><code>HBOriginViewController</code> VC是平时使用方式，实现<code>HBDemoProtocol</code>。主要代码:</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">IBAction</span>)sayHelloAction:(<span class="keyword">id</span>)sender &#123;</div><div class="line">    [<span class="keyword">self</span>.originModel sayHelloAction];</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">IBAction</span>)sayByeAction:(<span class="keyword">id</span>)sender &#123;</div><div class="line">    [<span class="keyword">self</span>. originModel sayByeAction];</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)alertTitle:(<span class="built_in">NSString</span> *)title &#123;</div><div class="line">    <span class="built_in">UIAlertController</span> *alert = [<span class="built_in">UIAlertController</span> alertControllerWithTitle:title message:<span class="literal">nil</span> preferredStyle:<span class="built_in">UIAlertControllerStyleAlert</span>];</div><div class="line">    [alert addAction:[<span class="built_in">UIAlertAction</span> actionWithTitle:<span class="string">@"确定"</span> style:<span class="built_in">UIAlertActionStyleDefault</span> handler:<span class="literal">nil</span>]];</div><div class="line">    [<span class="keyword">self</span> presentViewController:alert animated:<span class="literal">YES</span> completion:<span class="literal">nil</span>];</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)sayHello &#123;</div><div class="line">    [<span class="keyword">self</span> alertTitle:<span class="string">@"sayHello"</span>];</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)sayBye &#123;</div><div class="line">    [<span class="keyword">self</span> alertTitle:<span class="string">@"sayBye"</span>];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>点击<code>sayHello</code>、<code>sayBye</code>按钮弹出不同的文言。</p>
-<h3 id="新的思路"><a href="#新的思路" class="headerlink" title="新的思路"></a>新的思路</h3><p>对协议<code>HBDemoProtocol</code>做一个封装对象<code>HBProtocolWrapper</code>，定义结构体标识协议对应的方法:</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">struct</span> HBDemoProtocolAvalibale &#123;</div><div class="line">    <span class="built_in">BOOL</span> sayHello   : <span class="number">1</span>;</div><div class="line">    <span class="built_in">BOOL</span> sayBye     : <span class="number">1</span>;</div><div class="line">    </div><div class="line">&#125;;</div><div class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> HBDemoProtocolAvalibale HBDemoProtocolAvalibale;</div><div class="line"><span class="keyword">typedef</span> <span class="keyword">void</span>(^HBDemoProtocolBlock)(<span class="keyword">id</span>&lt;HBDemoProtocol&gt; delegate, HBDemoProtocolAvalibale delegateAvalible);</div><div class="line"></div><div class="line">....</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)setDelegate:(<span class="keyword">id</span>&lt;HBDemoProtocol&gt;)delegate &#123;</div><div class="line">    dispatch_barrier_async(<span class="keyword">self</span>.accessQueue, ^&#123;</div><div class="line">        _delegate = delegate;</div><div class="line">        </div><div class="line">        <span class="keyword">self</span>.delegateAvalible = (HBDemoProtocolAvalibale)&#123;</div><div class="line">            .sayHello = [delegate respondsToSelector:<span class="keyword">@selector</span>(sayHello)],</div><div class="line">            .sayBye = [delegate respondsToSelector:<span class="keyword">@selector</span>(sayBye)],</div><div class="line">            </div><div class="line">        &#125;;</div><div class="line">    &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>这样在调用协议实现时可以这样写:</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)setDelegate:(<span class="keyword">id</span>&lt;HBDemoProtocol&gt;)delegate &#123;</div><div class="line">    <span class="keyword">self</span>.protocolWrapper.delegate = delegate;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)sayHelloAction &#123;</div><div class="line">    [<span class="keyword">self</span>.protocolWrapper performDelegateBlock:^(<span class="keyword">id</span>&lt;HBDemoProtocol&gt; delegate, HBDemoProtocolAvalibale delegateAvalible) &#123;</div><div class="line">        <span class="keyword">if</span> (delegateAvalible.sayHello) &#123;</div><div class="line">            [delegate sayHello];</div><div class="line">        &#125;</div><div class="line">    &#125;];</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)sayByeAction &#123;</div><div class="line">    [<span class="keyword">self</span>.protocolWrapper performDelegateBlock:^(<span class="keyword">id</span>&lt;HBDemoProtocol&gt; delegate, HBDemoProtocolAvalibale delegateAvalible) &#123;</div><div class="line">        <span class="keyword">if</span> (delegateAvalible.sayBye) &#123;</div><div class="line">            [delegate sayBye];</div><div class="line">        &#125;</div><div class="line">    &#125;];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><code>HBWrapperViewController</code> 页面与 <code>HBOriginViewController</code>实现上基本一致。<br>将对<code>delegate</code>操作的代码和附加功能(delegate操作的队列等)做拆分，这样拆分了代码，阅读以及测试起来更加方便。</p>
-<p>这是一些阅读源代码的发现，如果你有其它意见或者见解欢迎留言(注意：留言系统是Disqus)或者发我邮箱：<code>honeyeeeb@gmail.com</code>。谢谢！</p>
-<p>需要多读一读优秀源代码，O(∩_∩)O~~</p>
-<div class="note info"><p>以上：如果有错误或者任何问题欢迎指正(评论系统集成的Disqus，所以你可能看不见🙈🤷‍♂️)！！！</p>
-<p>如果你还没有顺手的科学上网工具，推荐一个我正在用的<a href="http://my.yizhihongxing.hk/aff.php?aff=6311" target="_blank" rel="external">SSR服务</a>, 多条线路可供选择使用，一年不限流量 <code>¥200</code> 。现在购买的时候输入优惠码 <code>qj80</code> 还享受 <code>八折</code> 优惠！</p></div>
+        <p>iOS11.0 ~ 11.1.2的<code>非完美越狱</code>在 2017年圣诞节就可以了，现在网上也有几个越狱工具，比较有名的是 <code>Jonathan Levin</code> 写的<a href="http://newosxbook.com/liberios/" target="_blank" rel="external">LiberiOS</a> 和 <code>Coolstar</code>写的 <a href="https://coolstar.org/electra/" target="_blank" rel="external">Electra</a>，其中 <code>Jonathan Levin</code> 也提供了 <code>tvOS</code>的越狱。</p>
+<h2 id="支持的版本"><a href="#支持的版本" class="headerlink" title="支持的版本"></a>支持的版本</h2><p>所有iOS系统版本在11.0～11.1.2之间，并且是arm64的机器，也就是说你的手机至少是 iPhone5s。</p>
+<h2 id="注意事项⚠️"><a href="#注意事项⚠️" class="headerlink" title="注意事项⚠️"></a>注意事项⚠️</h2><ol>
+<li>备份！！！</li>
+<li>备份！！！</li>
+<li>备份！！！</li>
+<li>官方渠道下载越狱APP！！！</li>
+<li>手机重启后需要重新越狱</li>
+<li>暂时不支持 Cydia</li>
+<li>初次越狱后需改root用户密码(默认密码地球人都知道😜)</li>
+</ol>
+<h2 id="虽然都会但还是举个🌰"><a href="#虽然都会但还是举个🌰" class="headerlink" title="虽然都会但还是举个🌰"></a>虽然都会但还是举个🌰</h2><p>先关注到 <code>LiberiOS</code> 的，就拿它操作一下吧。</p>
+<ul>
+<li>下载 <a href="http://www.cydiaimpactor.com" target="_blank" rel="external">Cydia Impactor</a> 工具（用来安装越狱APP用）</li>
+<li>下载官方越狱安装包<a href="http://newosxbook.com/liberios/" target="_blank" rel="external">LiberiOS</a></li>
+</ul>
+<ol>
+<li>手机正常开机解锁，USB连接电脑，然后打开下载好的 <code>Cydia Impactor</code></li>
+<li>确定 <code>Cydia Impactor</code> 显示获取到了你的设备信息，将下载好的 <code>LiberiOS</code> 拖拽到 <code>Cydia Impactor</code>，或者点击 <code>Device</code> -&gt; <code>Install Package</code> 选择下载好的 <code>LiberiOS</code></li>
+<li>开始</li>
+<li>此时 <code>Cydia Impactor</code>要求你输入 AppleID账户和密码，如果 Apple ID开启了二次验证，需要去<a href="https://appleid.apple.com/#!&amp;page=signin" target="_blank" rel="external">苹果用户中心</a> 申请一下临时授权密码。</li>
+<li>账户、密码成功后要求你使用 <code>签名账户</code> ,如果你用私人苹果开发者账户，选择它就好了，如果没有就只能使用自己的 Apple ID账户进行授权。</li>
+<li>安装成功后手机上会多出来一个 <code>LiberiOS</code> 的APP</li>
+<li>打开 <code>LiberiOS</code> APP, 点击最下面的彩色 <code>Jailbreak</code> 按钮，然后大约 30s 会看到越狱结果。</li>
+</ol>
+<h2 id="搞点事情"><a href="#搞点事情" class="headerlink" title="搞点事情"></a>搞点事情</h2><p>越狱就是为了搞点事情嘛，最想拿来开刀的当然是万人瞩目的微信了😜，被大家玩坏了的功能无非就是防止消息撤回、修改运动步数、自动抢红包等等。网上已经有很多优秀的文章和源代码了，所以我就<code>站在巨人的肩上</code>直接拿来主义。</p>
+<h3 id="安装bfinject"><a href="#安装bfinject" class="headerlink" title="安装bfinject"></a>安装bfinject</h3><p>因为目前的越狱还不支持<code>Cydia</code>，所以现在没有集中的插件管理，在网上发现了一个为此次 <code>LiberiOS</code> 和 <code>Electra</code> 越狱版本提供的注入插件与砸壳的工具：<a href="https://github.com/BishopFox/bfinject" target="_blank" rel="external">猛戳此处</a>，其中也内置了几个简单的动态库，具体安装过程：</p>
+<ol>
+<li>下载代码到电脑，或者git clone到电脑</li>
+<li>电脑的 Terminal 链接到越狱机器</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">1. Mac user<span class="comment"># ssh root@your-device-ip</span></div><div class="line">   root@your-device-ip<span class="string">'s password:</span></div><div class="line">   (the default password is 'alpine<span class="string">')</span></div><div class="line"></div><div class="line">2. iPhone root# export PATH=$PATH:/jb/usr/bin:/jb/bin:/jb/sbin:/jb/usr/sbin:/jb/usr/local/bin:</div><div class="line">3. iPhone root# cd /jb</div><div class="line">4. iPhone root# mkdir bfinject</div><div class="line">5. iPhone root# cd bfinject</div><div class="line">6. cp /jb/usr/bin/scp /usr/bin (此命令第一次越狱之行就可以，开启scp命令)</div></pre></td></tr></table></figure>
+<ol>
+<li>新开一个 Terminal 输入：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Mac user<span class="comment"># scp /path/to/bfinject.tar root@your-device-ip:/jb/bfinject</span></div></pre></td></tr></table></figure>
+<ol>
+<li>返回上一个 Terminal 输入：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">6. iPhone root<span class="comment"># tar xvf bfinject.tar</span></div></pre></td></tr></table></figure>
+<h3 id="下载微信插件"><a href="#下载微信插件" class="headerlink" title="下载微信插件"></a>下载微信插件</h3><p>一开始想直接使用前辈们的工作<a href="https://github.com/TKkk-iOSer/WeChatPlugin-iOS" target="_blank" rel="external">iOS 版微信小助手</a>，结果编译好后，注入微信失败。索性就改造了一下代码，放在了<a href="">我的GitHub</a>，里面有编译好的动态库可以直接使用，如果想自己扩展内容，可以fork一份代码自己改造。</p>
+<p><em>注意⚠️：本项目只是开发者研究娱乐使用，禁止非法。项目使用了 MonkeyDev ，详细请参考文章末尾链接</em></p>
+<p>将下载或者编译好的插件拷贝到越狱机器：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Mac user<span class="comment"># scp WeChatiOS_captain.dylib root@192.168.37.192:/jb/bfinject/dylibs</span></div><div class="line"></div><div class="line">root@192.168.37.192<span class="string">'s password:</span></div><div class="line">WeChatiOS_captain.dylib  100%  330KB   1.7MB/s   00:00</div></pre></td></tr></table></figure>
+<p>越狱手机打开微信，新开一个 Terminal 中输入：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">iPhone root<span class="comment"># bash bfinject -P WeChat -l dylibs/WeChatiOS_captain.dylib</span></div><div class="line"></div><div class="line">[+] Electra detected.</div><div class="line">[+] Injecting into <span class="string">'/var/containers/Bundle/Application/42C40B72-03F2-4A29-A811-D2AD491ABD10/WeChat.app/WeChat'</span></div><div class="line">[+] Getting Team ID from target application...</div><div class="line">[+] Thinning dylib into non-fat arm64 image</div><div class="line">[+] Signing injectable .dylib with Team ID 88L2Q4487U and platform entitlements...</div><div class="line">[bfinject4realz] Calling task_for_pid() <span class="keyword">for</span> PID 3706.</div><div class="line">[bfinject4realz] Calling thread_create() on PID 3706</div><div class="line">[bfinject4realz] Looking <span class="keyword">for</span> ROP gadget... found at 0x104924680</div><div class="line">[bfinject4realz] Fake stack frame at 0x119e00000</div><div class="line">[bfinject4realz] Calling _pthread_set_self() at 0x180d9b804...</div><div class="line">[bfinject4realz] Returned from <span class="string">'_pthread_set_self'</span></div><div class="line">[bfinject4realz] Calling dlopen() at 0x180b5b460...</div><div class="line">[bfinject4realz] Returned from <span class="string">'dlopen'</span></div><div class="line">[bfinject4realz] Success! Library was loaded at 0x1c41cfc30</div><div class="line">[+] So long and thanks <span class="keyword">for</span> all the fish.</div></pre></td></tr></table></figure></p>
+<p>然后打开【设置】-&gt;【微信小助手】就可以邪恶的修改信息了：</p>
+<img src="/2018/01/27/iOS11-11-1-2越狱初体验/wechat_assistant.PNG" alt="100 100" title="100 100">
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>越狱有很大的风险，还需求谨慎谨慎又谨慎。PS：本文章只是对此次越狱的初次体验，越狱后发挥你的想象就可以对手机为所欲为👿。</p>
+<p>不知道是微信的安全机制还是其它原因，这个插件只要微信APP的进程被杀掉了，插件就需要重新注入，这一点有点坑了。如果有哪位大神知道劳烦告诉小弟。</p>
+<h2 id="参考-amp-❤️"><a href="#参考-amp-❤️" class="headerlink" title="参考&amp;❤️"></a>参考&amp;❤️</h2><ol>
+<li><a href="http://yulingtianxia.com/blog/2017/03/06/How-to-hook-the-correct-method-in-reverse-engineering/" target="_blank" rel="external">如何在逆向工程中 Hook 得更准 - 微信屏蔽好友&amp;群消息实战</a></li>
+<li><a href="https://github.com/TKkk-iOSer/WeChatPlugin-iOS" target="_blank" rel="external">iOS 版微信小助手</a></li>
+<li><a href="http://iosre.com" target="_blank" rel="external">iOSRE</a></li>
+<li><a href="https://github.com/AloneMonkey/MonkeyDev" target="_blank" rel="external">MonkeyDev</a></li>
+</ol>
 
       
     </div>
@@ -426,7 +463,7 @@ delegate &amp;amp; struct最近在阅读SRSocketRocket源代码时候发现了�
     <strong>本文作者：</strong>honeyeeb</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://honeyeeb.com/2017/06/13/delegate使用新想法/" title="delegate使用新想法">http://honeyeeb.com/2017/06/13/delegate使用新想法/</a>
+    <a href="http://honeyeeb.com/2018/01/27/iOS11-11-1-2越狱初体验/" title="iOS11~11.1.2越狱初体验">http://honeyeeb.com/2018/01/27/iOS11-11-1-2越狱初体验/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="CC BY-NC-SA 3.0" rel="external nofollow" target="_blank">undefined</a> 许可协议。转载请注明出处！</li>
@@ -441,6 +478,8 @@ delegate &amp;amp; struct最近在阅读SRSocketRocket源代码时候发现了�
           
             <a href="/tags/iOS/" rel="tag"># iOS</a>
           
+            <a href="/tags/iOSRE/" rel="tag"># iOSRE</a>
+          
         </div>
       
 
@@ -452,8 +491,8 @@ delegate &amp;amp; struct最近在阅读SRSocketRocket源代码时候发现了�
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/27/调试别人的APP/" rel="next" title="调试别人的APP">
-                <i class="fa fa-chevron-left"></i> 调试别人的APP
+              <a href="/2017/06/28/Core NFC小试/" rel="next" title="Core NFC小试">
+                <i class="fa fa-chevron-left"></i> Core NFC小试
               </a>
             
           </div>
@@ -461,10 +500,6 @@ delegate &amp;amp; struct最近在阅读SRSocketRocket源代码时候发现了�
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/06/28/Core NFC小试/" rel="prev" title="Core NFC小试">
-                Core NFC小试 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -656,7 +691,7 @@ delegate &amp;amp; struct最近在阅读SRSocketRocket源代码时候发现了�
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#delegate-amp-struct"><span class="nav-number">1.</span> <span class="nav-text">delegate & struct</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Demo"><span class="nav-number">2.</span> <span class="nav-text">Demo</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Origin"><span class="nav-number">2.1.</span> <span class="nav-text">Origin</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新的思路"><span class="nav-number">2.2.</span> <span class="nav-text">新的思路</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#支持的版本"><span class="nav-number">1.</span> <span class="nav-text">支持的版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意事项⚠️"><span class="nav-number">2.</span> <span class="nav-text">注意事项⚠️</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#虽然都会但还是举个🌰"><span class="nav-number">3.</span> <span class="nav-text">虽然都会但还是举个🌰</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搞点事情"><span class="nav-number">4.</span> <span class="nav-text">搞点事情</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装bfinject"><span class="nav-number">4.1.</span> <span class="nav-text">安装bfinject</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下载微信插件"><span class="nav-number">4.2.</span> <span class="nav-text">下载微信插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小结"><span class="nav-number">4.3.</span> <span class="nav-text">小结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考-amp-❤️"><span class="nav-number">5.</span> <span class="nav-text">参考&❤️</span></a></li></ol></div>
             
 
           </div>
@@ -836,9 +871,9 @@ delegate &amp;amp; struct最近在阅读SRSocketRocket源代码时候发现了�
   
     <script type="text/javascript">
       var disqus_config = function () {
-        this.page.url = 'http://honeyeeb.com/2017/06/13/delegate使用新想法/';
-        this.page.identifier = '2017/06/13/delegate使用新想法/';
-        this.page.title = 'delegate使用新想法';
+        this.page.url = 'http://honeyeeb.com/2018/01/27/iOS11-11-1-2越狱初体验/';
+        this.page.identifier = '2018/01/27/iOS11-11-1-2越狱初体验/';
+        this.page.title = 'iOS11~11.1.2越狱初体验';
       };
       function loadComments () {
         var d = document, s = d.createElement('script');

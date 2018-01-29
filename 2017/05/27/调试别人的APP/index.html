@@ -9,9 +9,11 @@
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="google-site-verification" content="IEg0jOk0olE2dZjsdPKwR2--D0EbpWkqIU35rT7C_bA" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
+
+
+
 
 
 
@@ -53,60 +55,25 @@
 
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=6.0.2" rel="stylesheet" type="text/css" />
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.2">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.2">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.2">
 
 
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="iOS,iOSRE," />
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.2" color="#222">
 
 
 
 
 
 
-
-
-
-
-<meta name="description" content="1. 新发现私有API今天上午iOS技术圈有一些骚动，原因就是图图发布了一条微博:
-
-内容是国外友人在浏览iOS 私有库的时候发现苹果大大隐藏了一个功能，这个功能提供苹果的工程师调试APP，在APP内可以查看APP的UI等信息。戳次查看文章内容!
-主要调用UIKit.framework的两个私有API:
-12345678Class overClass = NSClassFromString(@&quot;U">
-<meta property="og:type" content="article">
-<meta property="og:title" content="调试别人的APP">
-<meta property="og:url" content="http://honeyeeb.com/2017/05/27/调试别人的APP/index.html">
-<meta property="og:site_name" content="honeyeeb's blog">
-<meta property="og:description" content="1. 新发现私有API今天上午iOS技术圈有一些骚动，原因就是图图发布了一条微博:
-
-内容是国外友人在浏览iOS 私有库的时候发现苹果大大隐藏了一个功能，这个功能提供苹果的工程师调试APP，在APP内可以查看APP的UI等信息。戳次查看文章内容!
-主要调用UIKit.framework的两个私有API:
-12345678Class overClass = NSClassFromString(@&quot;U">
-<meta property="og:image" content="http://honeyeeb.com/debugger_weibo.jpg">
-<meta property="og:image" content="http://honeyeeb.com/uidebugginginformationoverlay_0.png">
-<meta property="og:updated_time" content="2017-10-26T11:06:09.535Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="调试别人的APP">
-<meta name="twitter:description" content="1. 新发现私有API今天上午iOS技术圈有一些骚动，原因就是图图发布了一条微博:
-
-内容是国外友人在浏览iOS 私有库的时候发现苹果大大隐藏了一个功能，这个功能提供苹果的工程师调试APP，在APP内可以查看APP的UI等信息。戳次查看文章内容!
-主要调用UIKit.framework的两个私有API:
-12345678Class overClass = NSClassFromString(@&quot;U">
-<meta name="twitter:image" content="http://honeyeeb.com/debugger_weibo.jpg">
 
 
 
@@ -115,15 +82,13 @@
   var CONFIG = {
     root: '/',
     scheme: 'Mist',
-    version: '5.1.3',
+    version: '6.0.2',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
+    fastclick: false,
+    lazyload: false,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
     algolia: {
       applicationID: '',
       apiKey: '',
@@ -135,11 +100,50 @@
 </script>
 
 
+  
+
+
+
+
+  
+  <meta name="keywords" content="iOS,iOSRE," />
+
+
+<meta name="description" content="1. 新发现私有API今天上午iOS技术圈有一些骚动，原因就是图图发布了一条微博:
+
+
+内容是国外友人在浏览iOS 私有库的时候发现苹果大大隐藏了一个功能，这个功能提供苹果的工程师调试APP，在APP内可以查看APP的UI等信息。戳次查看文章内容!
+主要调用UIKit.framework的两个私有API:
+12345678Class overClass = NSClassFromString(@&quot;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="调试别人的APP">
+<meta property="og:url" content="http://honeyeeb.com/2017/05/27/调试别人的APP/index.html">
+<meta property="og:site_name" content="honeyeeb's blog">
+<meta property="og:description" content="1. 新发现私有API今天上午iOS技术圈有一些骚动，原因就是图图发布了一条微博:
+
+
+内容是国外友人在浏览iOS 私有库的时候发现苹果大大隐藏了一个功能，这个功能提供苹果的工程师调试APP，在APP内可以查看APP的UI等信息。戳次查看文章内容!
+主要调用UIKit.framework的两个私有API:
+12345678Class overClass = NSClassFromString(@&quot;">
+<meta property="og:image" content="http://honeyeeb.com/2017/05/27/调试别人的APP/debugger_weibo.jpg">
+<meta property="og:image" content="http://honeyeeb.com/2017/05/27/调试别人的APP/uidebugginginformationoverlay_0.png">
+<meta property="og:updated_time" content="2018-01-28T03:28:09.840Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="调试别人的APP">
+<meta name="twitter:description" content="1. 新发现私有API今天上午iOS技术圈有一些骚动，原因就是图图发布了一条微博:
+
+
+内容是国外友人在浏览iOS 私有库的时候发现苹果大大隐藏了一个功能，这个功能提供苹果的工程师调试APP，在APP内可以查看APP的UI等信息。戳次查看文章内容!
+主要调用UIKit.framework的两个私有API:
+12345678Class overClass = NSClassFromString(@&quot;">
+<meta name="twitter:image" content="http://honeyeeb.com/2017/05/27/调试别人的APP/debugger_weibo.jpg">
+
+
+
+
+
 
   <link rel="canonical" href="http://honeyeeb.com/2017/05/27/调试别人的APP/"/>
-
-
-
 
 
   <title>调试别人的APP | honeyeeb's blog</title>
@@ -148,14 +152,15 @@
 
 
 
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-97441090-1"></script>
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-97441090-1', 'auto');
-  ga('send', 'pageview');
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-97441090-1');
 </script>
+
 
 
   <script type="text/javascript">
@@ -171,6 +176,33 @@
 
 
 
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -184,7 +216,7 @@
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
+      <div class="header-inner"> <div class="site-brand-wrapper">
   <div class="site-meta ">
     
 
@@ -218,41 +250,25 @@
         
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
+            首页</a>
         </li>
       
         
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
+            归档</a>
         </li>
       
         
         <li class="menu-item menu-item-tags">
           <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
-          </a>
+            标签</a>
         </li>
       
         
         <li class="menu-item menu-item-commonweal">
           <a href="/404.html" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
-            
-            公益404
-          </a>
+            公益404</a>
         </li>
       
 
@@ -264,9 +280,15 @@
 </nav>
 
 
+  
+
+
 
  </div>
     </header>
+
+    
+
 
     <main id="main" class="main">
       <div class="main-inner">
@@ -281,6 +303,8 @@
 
   
   
+  
+
   
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
@@ -317,11 +341,10 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-27T12:57:36+08:00">
-                2017-05-27
-              </time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-27T12:57:36+08:00">2017-05-27</time>
             
 
+            
             
 
             
@@ -378,12 +401,14 @@
 
       
         <h2 id="1-新发现私有API"><a href="#1-新发现私有API" class="headerlink" title="1. 新发现私有API"></a>1. 新发现私有API</h2><p>今天上午iOS技术圈有一些骚动，原因就是<code>图图</code>发布了一条微博:</p>
-<p><img src="debugger_weibo.jpg" alt="图图的微博"></p>
+<img src="/2017/05/27/调试别人的APP/debugger_weibo.jpg" alt="Weibo" title="Weibo">
+<!--![图图的微博](debugger_weibo.jpg)-->
 <p>内容是国外友人在浏览iOS 私有库的时候发现苹果大大隐藏了一个功能，这个功能提供苹果的工程师调试APP，在APP内可以查看APP的UI等信息。<a href="http://ryanipete.com/blog/ios/swift/objective-c/uidebugginginformationoverlay/" target="_blank" rel="external">戳次查看文章内容!</a></p>
 <p>主要调用<code>UIKit.framework</code>的两个私有API:</p>
 <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">Class overClass = <span class="built_in">NSClassFromString</span>(<span class="string">@"UIDebuggingInformationOverlay"</span>);</div><div class="line">    SEL overSel = <span class="built_in">NSSelectorFromString</span>(<span class="string">@"prepareDebuggingOverlay"</span>);</div><div class="line">    <span class="keyword">if</span> (overClass &amp;&amp; overSel) &#123;</div><div class="line"><span class="meta">#pragma clang diagnostic push</span></div><div class="line"><span class="meta">#pragma clang diagnostic ignored <span class="meta-string">"-Warc-performSelector-leaks"</span></span></div><div class="line">        [overClass performSelector:overSel];</div><div class="line"><span class="meta">#pragma clang diagnostic pop</span></div><div class="line">    &#125;</div></pre></td></tr></table></figure>
 <p>启动APP后主要界面张这个样子:</p>
-<p><img src="uidebugginginformationoverlay_0.png" alt="启动后界面"></p>
+<img src="/2017/05/27/调试别人的APP/uidebugginginformationoverlay_0.png" alt="Debug" title="Debug">
+<!--![启动后界面](uidebugginginformationoverlay_0.png)-->
 <p>因为是私有API，这段代码是不能直接使用的，也不能提交到App Store上，所以我认为你可以在公司提交版本内测或者开发过程中加入，这样发现bug的时候iOS工程师就顺利的发现问题。</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> overlayClass = <span class="type">NSClassFromString</span>(<span class="string">"UIDebuggingInformationOverlay"</span>) <span class="keyword">as</span>? <span class="type">UIWindow</span>.<span class="type">Type</span></div><div class="line"><span class="number">_</span> = overlayClass?.perform(<span class="type">NSSelectorFromString</span>(<span class="string">"prepareDebuggingOverlay"</span>))</div><div class="line"><span class="keyword">let</span> overlay = overlayClass?.perform(<span class="type">NSSelectorFromString</span>(<span class="string">"overlay"</span>)).takeUnretainedValue() <span class="keyword">as</span>? <span class="type">UIWindow</span></div><div class="line"><span class="number">_</span> = overlay?.perform(<span class="type">NSSelectorFromString</span>(<span class="string">"toggleVisibility"</span>))</div></pre></td></tr></table></figure>
 <p>私认为在实际开发中Xcode内置更加友好且功能完善的UI查看工具，界面和<code>Reveal</code>也很相似，新发现的私有API可能用处不是特别大。</p>
@@ -396,6 +421,7 @@
 <p>然后 <code>cmd + R</code> 就等待神奇的结果吧。</p>
 <div class="note info"><p>以上：如果有错误或者任何问题欢迎指正(评论系统集成的Disqus，所以你可能看不见🙈🤷‍♂️)！！！</p>
 <p>如果你还没有顺手的科学上网工具，推荐一个我正在用的<a href="http://my.yizhihongxing.hk/aff.php?aff=6311" target="_blank" rel="external">SSR服务</a>, 多条线路可供选择使用，一年不限流量 <code>¥200</code> 。现在购买的时候输入优惠码 <code>qj80</code> 还享受 <code>八折</code> 优惠！</p></div>
+
       
     </div>
     
@@ -410,17 +436,13 @@
       <div>
         <ul class="post-copyright">
   <li class="post-copyright-author">
-    <strong>本文作者：</strong>
-    honeyeeb
-  </li>
+    <strong>本文作者：</strong>honeyeeb</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     <a href="http://honeyeeb.com/2017/05/27/调试别人的APP/" title="调试别人的APP">http://honeyeeb.com/2017/05/27/调试别人的APP/</a>
   </li>
   <li class="post-copyright-license">
-    <strong>版权声明： </strong>
-    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
-  </li>
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="CC BY-NC-SA 3.0" rel="external nofollow" target="_blank">undefined</a> 许可协议。转载请注明出处！</li>
 </ul>
 
       </div>
@@ -483,9 +505,6 @@
           </div>
           
 
-
-          
-
   
     <div class="comments" id="comments">
       <div id="disqus_thread">
@@ -541,48 +560,62 @@
               <p class="site-description motion-element" itemprop="description">胡乱记录点经历</p>
           </div>
 
-          <nav class="site-state motion-element">
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
 
-            
-              <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
               
-                  <span class="site-state-item-count">6</span>
-                  <span class="site-state-item-name">日志</span>
-                </a>
-              </div>
-            
 
-            
               
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
               
-              <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
-                  <span class="site-state-item-count">1</span>
-                  <span class="site-state-item-name">分类</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
-                  <span class="site-state-item-name">标签</span>
-                </a>
-              </div>
-            
-
-          </nav>
+            </nav>
+          
 
           
 
-          <div class="links-of-author motion-element">
-            
-          </div>
+          
 
           
           
@@ -621,6 +654,9 @@
           
 
           
+            
+          
+          
 
         </div>
       </section>
@@ -655,14 +691,18 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">honeyeeb</span>
 
   
+
+  
 </div>
+
+
 
 
   <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
@@ -673,7 +713,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.3</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Mist</a> v6.0.2</div>
 
 
 
@@ -737,7 +777,13 @@
 
 
 
+
+
+
   
+
+
+
 
 
 
@@ -753,16 +799,6 @@
   
   
     <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
   
 
   
@@ -784,52 +820,53 @@
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.2"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.2"></script>
 
 
 
   
+  
 
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.2"></script>
 
 
 
   
 
 
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.2"></script>
+
+
+
   
 
-    
-      <script id="dsq-count-scr" src="https://honeyeeb.disqus.com/count.js" async></script>
-    
+  
+    <script id="dsq-count-scr" src="https://honeyeeb.disqus.com/count.js" async></script>
+  
 
-    
-      <script type="text/javascript">
-        var disqus_config = function () {
-          this.page.url = 'http://honeyeeb.com/2017/05/27/调试别人的APP/';
-          this.page.identifier = '2017/05/27/调试别人的APP/';
-          this.page.title = '调试别人的APP';
-        };
+  
+    <script type="text/javascript">
+      var disqus_config = function () {
+        this.page.url = 'http://honeyeeb.com/2017/05/27/调试别人的APP/';
+        this.page.identifier = '2017/05/27/调试别人的APP/';
+        this.page.title = '调试别人的APP';
+      };
+      function loadComments () {
         var d = document, s = d.createElement('script');
         s.src = 'https://honeyeeb.disqus.com/embed.js';
         s.setAttribute('data-timestamp', '' + +new Date());
         (d.head || d.body).appendChild(s);
-      </script>
-    
-
+      }
+      
+        loadComments();
+      
+    </script>
   
+
 
 
 
@@ -841,8 +878,6 @@
 
 
   
-
-
 
 
 
@@ -973,6 +1008,12 @@
   
 
   
+
+  
+
+  
+  
+
   
 
   
