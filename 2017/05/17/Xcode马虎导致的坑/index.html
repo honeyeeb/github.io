@@ -2,6 +2,15 @@
 
 
 
+
+
+
+
+
+
+
+
+
   
 
 
@@ -9,7 +18,7 @@
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
 <meta name="theme-color" content="#222">
 
 
@@ -55,19 +64,19 @@
 
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=6.0.2" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css" />
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.3.0">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.2">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.3.0">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.2">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.3.0">
 
 
-  <link rel="mask-icon" href="/images/logo.svg?v=6.0.2" color="#222">
+  <link rel="mask-icon" href="/images/logo.svg?v=6.3.0" color="#222">
 
 
 
@@ -82,7 +91,7 @@
   var CONFIG = {
     root: '/',
     scheme: 'Mist',
-    version: '6.0.2',
+    version: '6.3.0',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     fastclick: false,
@@ -105,11 +114,7 @@
 
 
 
-  
-  <meta name="keywords" content="iOS,Xcode," />
-
-
-<meta name="description" content="在开发中经常会因为自己的马虎遇到一些bug，给自己挖了一个坑，这里记录一下我自己给自己挖的坑。
+  <meta name="description" content="在开发中经常会因为自己的马虎遇到一些bug，给自己挖了一个坑，这里记录一下我自己给自己挖的坑。
 switch issue平时在开发中有时会用到switch语句，大学时候老师教我们使用if..else..来代替switch，但是有时会我更喜欢switch语句，举个栗子🌰：
 1234567891011121314151617181920212223242526272829303132typedef">
 <meta property="og:type" content="article">
@@ -133,6 +138,13 @@ switch issue平时在开发中有时会用到switch语句，大学时候老师�
 
   <link rel="canonical" href="https://honeyeeb.com/2017/05/17/Xcode马虎导致的坑/"/>
 
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
 
   <title>Xcode马虎导致的坑 | honeyeeb's blog</title>
   
@@ -204,24 +216,22 @@ switch issue平时在开发中有时会用到switch语句，大学时候老师�
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"> <div class="site-brand-wrapper">
+      <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">honeyeeb's blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
-      
-        <p class="site-subtitle"></p>
-      
+    
   </div>
 
   <div class="site-nav-toggle">
-    <button>
+    <button aria-label="切换导航栏">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -229,50 +239,65 @@ switch issue平时在开发中有时会用到switch语句，大学时候老师�
   </div>
 </div>
 
-<nav class="site-nav">
-  
 
+
+<nav class="site-nav">
   
     <ul id="menu" class="menu">
       
         
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
-        </li>
-      
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
-        </li>
-      
         
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
-        </li>
-      
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
         
-        <li class="menu-item menu-item-commonweal">
-          <a href="/404.html" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />公益 404</a>
-        </li>
-      
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-commonweal">
+    <a href="/404.html" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />公益 404</a>
+  </li>
 
       
+      
     </ul>
+  
+
+  
+    
+
   
 
   
 </nav>
 
 
+
   
 
 
 
- </div>
+</div>
     </header>
 
     
@@ -281,6 +306,7 @@ switch issue平时在开发中有时会用到switch语句，大学时候老师�
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          
           <div id="content" class="content">
             
 
@@ -303,9 +329,9 @@ switch issue平时在开发中有时会用到switch语句，大学时候老师�
     <link itemprop="mainEntityOfPage" href="https://honeyeeb.com/2017/05/17/Xcode马虎导致的坑/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="honeyeeb">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Author">
+      <meta itemprop="description" content="胡乱记录点经历">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -317,11 +343,19 @@ switch issue平时在开发中有时会用到switch语句，大学时候老师�
 
         
         
-          <h1 class="post-title" itemprop="name headline">Xcode马虎导致的坑</h1>
+          <h1 class="post-title" itemprop="name headline">Xcode马虎导致的坑
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -329,12 +363,30 @@ switch issue平时在开发中有时会用到switch语句，大学时候老师�
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-17T22:04:18+08:00">2017-05-17</time>
+
+              
+                
+              
+
+              <time title="创建时间：2017-05-17 22:04:18" itemprop="dateCreated datePublished" datetime="2017-05-17T22:04:18+08:00">2017-05-17</time>
             
 
             
-            
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-01-28 11:28:36" itemprop="dateModified" datetime="2018-01-28T11:28:36+08:00">2018-01-28</time>
+              
             
           </span>
 
@@ -348,6 +400,7 @@ switch issue平时在开发中有时会用到switch语句，大学时候老师�
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2017/05/17/Xcode马虎导致的坑/#comments" itemprop="discussionUrl">
+                
                   <span class="post-comments-count disqus-comment-count"
                         data-disqus-identifier="2017/05/17/Xcode马虎导致的坑/" itemprop="commentCount"></span>
                 </a>
@@ -363,12 +416,20 @@ switch issue平时在开发中有时会用到switch语句，大学时候老师�
                  <i class="fa fa-eye"></i>
                </span>
                
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
+                 <span class="post-meta-item-text">阅读次数：</span>
                
                  <span class="leancloud-visitors-count"></span>
              </span>
           
 
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon"
+            >
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
           
 
           
@@ -401,6 +462,9 @@ switch issue平时在开发中有时会用到switch语句，大学时候老师�
 
       
     </div>
+
+    
+
     
     
     
@@ -418,14 +482,14 @@ switch issue平时在开发中有时会用到switch语句，大学时候老师�
 
     
       <div id="wechat" style="display: inline-block">
-        <img id="wechat_qr" src="/images/wechatpay.JPG" alt="honeyeeb 微信支付"/>
+        <img id="wechat_qr" src="/images/wechatpay.JPG" alt="Author 微信支付"/>
         <p>微信支付</p>
       </div>
     
 
     
       <div id="alipay" style="display: inline-block">
-        <img id="alipay_qr" src="/images/alipay.JPG" alt="honeyeeb 支付宝"/>
+        <img id="alipay_qr" src="/images/alipay.JPG" alt="Author 支付宝"/>
         <p>支付宝</p>
       </div>
     
@@ -442,13 +506,13 @@ switch issue平时在开发中有时会用到switch语句，大学时候老师�
       <div>
         <ul class="post-copyright">
   <li class="post-copyright-author">
-    <strong>本文作者：</strong>honeyeeb</li>
+    <strong>本文作者： </strong>Author</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     <a href="https://honeyeeb.com/2017/05/17/Xcode马虎导致的坑/" title="Xcode马虎导致的坑">https://honeyeeb.com/2017/05/17/Xcode马虎导致的坑/</a>
   </li>
   <li class="post-copyright-license">
-    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 CC BY-NC-SA 3.0 许可协议。转载请注明出处！</li>
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
 </ul>
 
       </div>
@@ -558,11 +622,7 @@ switch issue平时在开发中有时会用到switch语句，大学时候老师�
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image"
-                src="/images/avatar.png"
-                alt="honeyeeb" />
-            
-              <p class="site-author-name" itemprop="name">honeyeeb</p>
+              <p class="site-author-name" itemprop="name">Author</p>
               <p class="site-description motion-element" itemprop="description">胡乱记录点经历</p>
           </div>
 
@@ -702,10 +762,10 @@ switch issue平时在开发中有时会用到switch语句，大学时候老师�
     <footer id="footer" class="footer">
       <div class="footer-inner">
         <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
-  <span class="with-love">
+  <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">honeyeeb</span>
+  <span class="author" itemprop="copyrightHolder">Author</span>
 
   
 
@@ -715,7 +775,7 @@ switch issue平时在开发中有时会用到switch语句，大学时候老师�
 
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.2.2</div>
 
 
 
@@ -723,7 +783,7 @@ switch issue平时在开发中有时会用到switch语句，大学时候老师�
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Mist</a> v6.0.2</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Mist</a> v6.3.0</div>
 
 
 
@@ -733,21 +793,20 @@ switch issue平时在开发中有时会用到switch语句，大学时候老师�
   <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
-    <span class="site-uv">
+    <span class="site-uv" title="总访客量">
       <i class="fa fa-user"></i>
       <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-      
     </span>
   
 
   
-    <span class="site-pv">
+    <span class="site-pv" title="总访问量">
       <i class="fa fa-eye"></i>
       <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-      
     </span>
   
 </div>
+
 
 
 
@@ -830,25 +889,25 @@ switch issue平时在开发中有时会用到switch语句，大学时候老师�
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=6.0.2"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=6.0.2"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.2"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=6.0.2"></script>
+  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
 
 
 
   
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.2"></script>
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
 
 
 
@@ -864,7 +923,7 @@ switch issue平时在开发中有时会用到switch语句，大学时候老师�
         this.page.url = 'https://honeyeeb.com/2017/05/17/Xcode马虎导致的坑/';
         this.page.identifier = '2017/05/17/Xcode马虎导致的坑/';
         this.page.title = 'Xcode马虎导致的坑';
-      };
+        };
       function loadComments () {
         var d = document, s = d.createElement('script');
         s.src = 'https://honeyeeb.disqus.com/embed.js';
@@ -876,12 +935,6 @@ switch issue平时在开发中有时会用到switch语句，大学时候老师�
       
     </script>
   
-
-
-
-
-
-	
 
 
 
@@ -966,35 +1019,24 @@ switch issue平时在开发中有时会用到switch语句，大学时候老师�
             var counter = results[0];
             counter.fetchWhenSave(true);
             counter.increment("time");
+            
             counter.save(null, {
               success: function(counter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+                
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(counter.get('time'));
+                
               },
               error: function(counter, error) {
                 console.log('Failed to save Visitor num, with error message: ' + error.message);
               }
             });
           } else {
-            var newcounter = new Counter();
-            /* Set ACL */
-            var acl = new AV.ACL();
-            acl.setPublicReadAccess(true);
-            acl.setPublicWriteAccess(true);
-            newcounter.setACL(acl);
-            /* End Set ACL */
-            newcounter.set("title", title);
-            newcounter.set("url", url);
-            newcounter.set("time", 1);
-            newcounter.save(null, {
-              success: function(newcounter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-              },
-              error: function(newcounter, error) {
-                console.log('Failed to create');
-              }
-            });
+            
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text('Counter not initialized! See more at console err msg.');
+              console.error('ATTENTION! LeanCloud counter has security bug, see here how to solve it: https://github.com/theme-next/hexo-leancloud-counter-security. \n But you also can use LeanCloud without security, by set \'security\' option to \'false\'.');
+            
           }
         },
         error: function(error) {
@@ -1022,6 +1064,8 @@ switch issue平时在开发中有时会用到switch语句，大学时候老师�
   
 
   
+  
+
   
 
   
